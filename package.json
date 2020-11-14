@@ -6,12 +6,16 @@
   "scripts": {
     "start": "parcel index.html -p 3000",
     "build": "parcel build index.html",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "eslint --config .eslintrc 'assets/**/*.js'"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "eslint": "7.13.0",
+    "eslint-config-pagarme-base": "3.0.0",
+    "eslint-plugin-import": "2.22.1",
     "parcel-bundler": "1.12.4"
   },
   "dependencies": {
