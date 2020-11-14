@@ -1,0 +1,19 @@
+{
+  "name": "gerador-imagem-pregacao",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "parcel index.html -p 3000",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "parcel-bundler": "1.12.4"
+  },
+  "dependencies": {
+    "dom-to-image": "2.6.0"
+  }
+}
