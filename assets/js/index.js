@@ -1,4 +1,5 @@
 import domtoimage from 'dom-to-image'
+import churchLogo from '../images/comunidade_belem.png'
 
 function getContentFromForm (form) {
   const content = {}
@@ -25,8 +26,18 @@ function setElementValues (content) {
   document.getElementsByClassName('message-date')[0].innerHTML = `${content['message-date']}`
   document.getElementsByClassName('preacher')[0].innerHTML = `${content.preacher}`
   document.getElementsByClassName('preacher-image')[0].src = `${content['preacher-image']}`
-  document.getElementsByClassName('church-logo')[0].src = `${content['church-logo']}`
-  document.getElementsByClassName('church-local')[0].src = `${content['church-local']}`
+
+  if (content['church-logo']) {
+    document.getElementsByClassName('church-logo')[0].src = `${content['church-logo']}`
+  } else {
+    document.getElementsByClassName('church-logo')[0].src = churchLogo
+  }
+
+  if (content['church-address']) {
+    document.getElementsByClassName('church-address')[0].innerHTML = `${content['church-address']}`
+  } else {
+    document.getElementsByClassName('church-address')[0].innerHTML = 'Rua Martim Affonso, 152 - Belenzinho, São Paulo - SP, 03057-050'
+  }
 }
 
 function viewImage () {
