@@ -1,147 +1,159 @@
-<html>
+<!doctype html>
+
+<html lang="pt-BR">
   <head>
+    <meta charset="utf-8">
+    <title>Gerador de imagem de pregador</title>
+    <meta name="description" content="Gerador de imagem de pregador">
+    <meta name="author" content="allangrds">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="robots" content="index, follow">
+
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Lato:wght@100;300;400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./assets/css/reset.css" />
     <link rel="stylesheet" href="./assets/css/style.css" />
   </head>
   <body>
-    <div class="box">
-      <h1 class="title">
-        Gerador de imagem de mensagem
-      </h1>
-      <form id="form">
-        <div class="input-group">
-          <label
-            class="input-label"
-            for="preacher"
-          >
-            Nome do pregador
-          </label>
-          <input
-            class="input-element"
-            type="text"
-            name="preacher"
-            id="preacher"
-            required
-            placeholder="Digite o nome do pregador"
-          />
-        </div>
-        <div class="input-group">
-          <label
-            class="input-label"
-            for="message"
-          >
-            Título da mensagem
-          </label>
-          <input
-            class="input-element"
-            type="text"
-            name="message"
-            id="message"
-            placeholder="Digite o título da mensagem"
-          />
-        </div>
-        <div class="input-group">
-          <label
-            class="input-label"
-            for="preacher-image"
-          >
-            URL da imagem do pregador
-          </label>
-          <input
-            class="input-element"
-            type="text"
-            name="preacher-image"
-            id="preacher-image"
-            required
-            placeholder="Digite a url contendo a imagem do pregador"
-          />
-        </div>
-        <div class="input-group">
-          <label
-            class="input-label"
-            for="message-date"
-          >
-            Quando ocorrerá a mensagem
-          </label>
-          <input
-            class="input-element"
-            type="text"
-            name="message-date"
-            id="message-date"
-            required
-            placeholder="Digite quando ocorrerá a mensagem"
-          />
-        </div>
-        <div class="input-group">
-          <label
-            class="input-label"
-            for="church-logo"
-          >
-            URL do logo da igreja
-          </label>
-          <input
-            class="input-element"
-            type="text"
-            name="church-logo"
-            id="church-logo"
-            placeholder="Digite a url do logo da igreja"
-          />
-        </div>
-        <div class="input-group">
-          <label
-            class="input-label"
-            for="church-address"
-          >
-            Endereço da igreja
-          </label>
-          <input
-            class="input-element"
-            type="text"
-            name="church-address"
-            id="church-address"
-            placeholder="Digite o endereço da igreja"
-          />
-        </div>
-        <button
-          class="button"
-        >
-          Visualizar imagem
-        </button>
-      </form>
-      <button
-        class="button primary"
-        type="button"
-        id="btn-save-image"
-      >
-        Salvar imagem
-      </button>
-    </div>
-
-    <div id="generated-image">
-      <div class="border">
-        <h1 class="message">
-          "Deus sempre cumpre suas promessas"
+    <div class="main">
+      <div class="box">
+        <h1 class="title">
+          Gerador de imagem de mensagem
         </h1>
-        <div class="generated-image-preacher">
-          <img
-            alt="foto do pregador"
-            class="preacher-image"
-            src="data:image/jpeg;base64,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"
+        <form id="form">
+          <div class="input-group">
+            <label
+              class="input-label"
+              for="preacher"
+            >
+              Nome do pregador
+            </label>
+            <input
+              class="input-element"
+              type="text"
+              name="preacher"
+              id="preacher"
+              required
+              placeholder="Digite o nome do pregador"
+            />
+          </div>
+          <div class="input-group">
+            <label
+              class="input-label"
+              for="message"
+            >
+              Título da mensagem
+            </label>
+            <input
+              class="input-element"
+              type="text"
+              name="message"
+              id="message"
+              placeholder="Digite o título da mensagem"
+            />
+          </div>
+          <div class="input-group">
+            <label
+              class="input-label"
+              for="preacher-image"
+            >
+              URL da imagem do pregador
+            </label>
+            <input
+              class="input-element"
+              type="text"
+              name="preacher-image"
+              id="preacher-image"
+              required
+              placeholder="Digite a url contendo a imagem do pregador"
+            />
+          </div>
+          <div class="input-group">
+            <label
+              class="input-label"
+              for="message-date"
+            >
+              Quando ocorrerá a mensagem
+            </label>
+            <input
+              class="input-element"
+              type="text"
+              name="message-date"
+              id="message-date"
+              required
+              placeholder="Digite quando ocorrerá a mensagem"
+            />
+          </div>
+          <div class="input-group">
+            <label
+              class="input-label"
+              for="church-logo"
+            >
+              URL do logo da igreja
+            </label>
+            <input
+              class="input-element"
+              type="text"
+              name="church-logo"
+              id="church-logo"
+              placeholder="Digite a url do logo da igreja"
+            />
+          </div>
+          <div class="input-group">
+            <label
+              class="input-label"
+              for="church-address"
+            >
+              Endereço da igreja
+            </label>
+            <input
+              class="input-element"
+              type="text"
+              name="church-address"
+              id="church-address"
+              placeholder="Digite o endereço da igreja"
+            />
+          </div>
+          <button
+            class="button"
           >
-          <h2 class="preacher">Pr. Silas Malafaia</h2>
-          <p class="message-date">No próximo sábado, 20/11, 10h</p>
-        </div>
-        <div class="generated-image-footer">
-          <img
-            class="church-logo"
-            alt="uma cruz escrito comunidade do belém"
-            src="./assets/images/comunidade_belem.png"
-          />
-          <p class="church-address">
-            Rua Martim Affonso, 152 - Belenzinho, São Paulo - SP, 03057-050
-          </p>
+            Visualizar imagem
+          </button>
+        </form>
+        <button
+          class="button primary"
+          type="button"
+          id="btn-save-image"
+        >
+          Salvar imagem
+        </button>
+      </div>
+
+      <div id="generated-image">
+        <div class="border">
+          <h1 class="message">
+            "Deus sempre cumpre suas promessas"
+          </h1>
+          <div class="generated-image-preacher">
+            <img
+              alt="foto do pregador"
+              class="preacher-image"
+              src="data:image/jpeg;base64,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"
+            >
+            <h2 class="preacher">Pr. Silas Malafaia</h2>
+            <p class="message-date">No próximo sábado, 20/11, 10h</p>
+          </div>
+          <div class="generated-image-footer">
+            <img
+              class="church-logo"
+              alt="uma cruz escrito comunidade do belém"
+              src="./assets/images/comunidade_belem.png"
+            />
+            <p class="church-address">
+              Rua Martim Affonso, 152 - Belenzinho, São Paulo - SP, 03057-050
+            </p>
+          </div>
         </div>
       </div>
     </div>
