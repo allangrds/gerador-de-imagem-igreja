@@ -1,4 +1,9 @@
 import domtoimage from 'dom-to-image'
+
+import {
+  getChurchAddress,
+  setChurchAddress,
+} from './localStorage'
 import churchLogo from '../images/comunidade_belem.png'
 
 function getContentFromForm (form) {
@@ -52,6 +57,19 @@ function viewImage () {
   })
 }
 
+function saveChurchAddress (value) {
+  setChurchAddress(value)
+}
+
+function retrieveChurchAddress () {
+  const churchAddress = getChurchAddress()
+  const churchAddressInput = document.getElementById('church-address')
+
+  if (churchAddress) {
+    churchAddressInput.value = churchAddress
+  }
+}
+
 function saveImage () {
   const button = document.getElementById('btn-save-image')
   const div = document.getElementById('generated-image')
@@ -63,6 +81,11 @@ function saveImage () {
   button.addEventListener('click', () => {
     domtoimage.toJpeg(div, options)
       .then((dataUrl) => {
+        const form = document.getElementById('form')
+        const content = getContentFromForm(form)
+
+        saveChurchAddress(content['church-address'])
+
         const link = document.createElement('a')
         link.download = 'my-image-name.jpeg'
         link.href = dataUrl
@@ -72,7 +95,12 @@ function saveImage () {
   })
 }
 
+function retrieveInputValues () {
+  retrieveChurchAddress()
+}
+
 document.addEventListener('DOMContentLoaded', () => {
   viewImage()
   saveImage()
+  retrieveInputValues()
 })
