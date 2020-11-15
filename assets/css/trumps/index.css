@@ -1,0 +1,5 @@
+@import "./preacher-message/index.css";
+
+.menu-column {
+  max-width: 250px;
+}
