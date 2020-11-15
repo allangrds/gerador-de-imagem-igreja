@@ -1,0 +1,9 @@
+@import "./settings/index.css";
+@import "./generic/index.css";
+@import "./objects/index.css";
+
+/*
+  @import "./components/index.css";
+*/
+@import "./trumps/index.css";
+@import "bulma/css/bulma.css";

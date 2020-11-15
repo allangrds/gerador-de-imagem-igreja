@@ -7,23 +7,33 @@
     "start": "parcel index.html -p 3000",
     "build": "parcel build index.html",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "lint": "eslint --config .eslintrc 'assets/**/*.js'",
+    "lint": "eslint --config .eslintrc 'assets/**/*.js' && npm run stylelint",
+    "stylelint": "stylelint './assets/**/*.css'",
     "commit": "cz"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "autoprefixer": "9.8.6",
     "commitizen": "4.2.2",
+    "cssnano": "4.1.10",
     "cz": "1.8.2",
     "cz-conventional-changelog": "3.3.0",
     "eslint": "7.13.0",
     "eslint-config-pagarme-base": "3.0.0",
     "eslint-plugin-import": "2.22.1",
     "parcel-bundler": "1.12.4",
-    "prettier-eslint": "11.0.0"
+    "postcss": "8.1.7",
+    "postcss-import": "12.0.0",
+    "postcss-modules": "3.2.2",
+    "postcss-nested": "4.0.0",
+    "prettier-eslint": "11.0.0",
+    "stylelint": "13.7.2",
+    "stylelint-config-standard": "20.0.0"
   },
   "dependencies": {
+    "bulma": "0.9.1",
     "dom-to-image": "2.6.0"
   },
   "config": {
