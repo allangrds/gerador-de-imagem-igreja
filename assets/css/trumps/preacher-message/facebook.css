@@ -1,0 +1,28 @@
+.preacher-message {
+  &.facebook {
+    font-size: 38px;
+    height: 1200px;
+    width: 1200px;
+
+    & .preacher-message-background {
+      padding: 80px;
+    }
+
+    & .preacher-message-border {
+      border: 8px solid var(--white);
+    }
+
+    & .preacher-message-title {
+      line-height: 80px;
+    }
+
+    & .preacher-message-image {
+      width: 200px;
+      height: 200px;
+    }
+
+    & .preacher-message-church-logo {
+      max-width: 130px;
+    }
+  }
+}

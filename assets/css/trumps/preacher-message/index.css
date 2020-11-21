@@ -1,21 +1,23 @@
-.preacher-message-whatsapp {
-  width: 400px;
-  height: 600px;
+@import "./whatsapp.css";
+@import "./instagram.css";
+@import "./facebook.css";
+
+.preacher-message {
   background-image: url("../../../images/preacher-message/background.png");
-  font-size: 18px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
 .preacher-message-background {
   height: 100%;
   width: 100%;
   background-color: rgba(0, 0, 0, 0.85);
-  padding: 20px;
 }
 
 .preacher-message-border {
   height: 100%;
   width: 100%;
-  border: 4px solid var(--white);
   padding: 20px;
   display: flex;
   flex-direction: column;
@@ -41,9 +43,7 @@
 }
 
 .preacher-message-image {
-  width: 130px;
-  height: 130px;
-  border-radius: 100px;
+  border-radius: 900px;
   margin-bottom: 10px;
 }
 
@@ -67,7 +67,6 @@
 }
 
 .preacher-message-church-logo {
-  max-width: 70px;
   margin-bottom: 10px;
   margin-top: 20px;
 }

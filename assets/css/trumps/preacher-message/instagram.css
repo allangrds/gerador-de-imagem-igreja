@@ -1,0 +1,28 @@
+.preacher-message {
+  &.instagram {
+    font-size: 36px;
+    height: 1080px;
+    width: 1080px;
+
+    & .preacher-message-background {
+      padding: 60px;
+    }
+
+    & .preacher-message-title {
+      line-height: 80px;
+    }
+
+    & .preacher-message-border {
+      border: 8px solid var(--white);
+    }
+
+    & .preacher-message-image {
+      width: 200px;
+      height: 200px;
+    }
+
+    & .preacher-message-church-logo {
+      max-width: 110px;
+    }
+  }
+}
