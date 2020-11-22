@@ -1,0 +1,24 @@
+.preacher-message {
+  &.whatsapp {
+    font-size: 18px;
+    height: 600px;
+    width: 400px;
+
+    & .preacher-message-background {
+      padding: 20px;
+    }
+
+    & .preacher-message-border {
+      border: 4px solid var(--white);
+    }
+
+    & .preacher-message-image {
+      width: 130px;
+      height: 130px;
+    }
+
+    & .preacher-message-church-logo {
+      max-width: 70px;
+    }
+  }
+}

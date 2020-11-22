@@ -1,18 +1,5 @@
-# Gerador de Imagens - Pregação
-Para ajudar a todos que precisam criar imagens de pregações em sua igreja, está aí o projeto.
-
-Ao acessá-lo você consegue gerar uma imagem como a de baixo:
-![Imagem gerada pelo projeto](./docs/images/image.jpeg)
-
-Para isso, você preenche os seguintes campos:
-- Nome do pregador
-- Título da mensagem(opcional)
-- Data de quando ocorrerá a pregação
-- URL com a imagem do pastor
-- URL com o logo da sua igreja
-- Endereço da sua igreja
-
-![Imagem gerada pelo projeto](./docs/images/form.png)
+# Gerador de imagens para igrejas
+Para ajudar a todos que precisam criar imagens para suas igrejas igreja, está aí o projeto.
 
 ![CI](https://github.com/allangrds/gerador-de-imagem-pregacao/workflows/CI/badge.svg?branch=main)
 ---
