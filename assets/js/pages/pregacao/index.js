@@ -13,7 +13,11 @@ function getContentFromForm (form) {
     const item = form.elements[i]
 
     if (item.value) {
-      content[item.name] = item.value
+      if (item.type === 'file') {
+        content[item.name] = item.files
+      } else {
+        content[item.name] = item.value
+      }
     }
   }
 
@@ -40,9 +44,20 @@ function setElementValues (content) {
   document.getElementsByClassName('preacher-message-name')[0].innerHTML = content['preacher-name']
   document.getElementsByClassName('preacher-message-name')[1].innerHTML = content['preacher-name']
   document.getElementsByClassName('preacher-message-name')[2].innerHTML = content['preacher-name']
-  document.getElementsByClassName('preacher-message-image')[0].src = content['preacher-image-url']
-  document.getElementsByClassName('preacher-message-image')[1].src = content['preacher-image-url']
-  document.getElementsByClassName('preacher-message-image')[2].src = content['preacher-image-url']
+
+  if (content['preacher-image-url']) {
+    document.getElementsByClassName('preacher-message-image')[0].src = content['preacher-image-url']
+    document.getElementsByClassName('preacher-message-image')[1].src = content['preacher-image-url']
+    document.getElementsByClassName('preacher-message-image')[2].src = content['preacher-image-url']
+  } else if (content['preacher-image-input'] && content['preacher-image-input'][0]) {
+    const reader = new FileReader()
+    reader.onload = function () {
+      document.getElementsByClassName('preacher-message-image')[0].src = reader.result
+      document.getElementsByClassName('preacher-message-image')[1].src = reader.result
+      document.getElementsByClassName('preacher-message-image')[2].src = reader.result
+    }
+    reader.readAsDataURL(content['preacher-image-input'][0])
+  }
 
   if (content['church-logo-url']) {
     document.getElementsByClassName('preacher-message-church-logo')[0].src = `${content['church-logo-url']}`
