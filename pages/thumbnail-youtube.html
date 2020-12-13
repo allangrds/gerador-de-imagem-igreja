@@ -1,0 +1,174 @@
+
+<!doctype html>
+
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8">
+    <title>Gerador de imagem de pregador</title>
+    <meta name="description" content="Gerador de imagem de pregador">
+    <meta name="author" content="allangrds">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="robots" content="index, follow">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Lato:wght@100;300;400;700&family=Merriweather:wght@400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../assets/css/index.css" />
+  </head>
+  <body>
+    <div class="wrapper">
+      <div class="container">
+        <div class="columns">
+          <div class="column menu-column">
+            <aside class="menu">
+              <p class="menu-label">
+                Geral
+              </p>
+              <ul class="menu-list">
+                <li>
+                  <a
+                    href="./pregacao.html"
+                  >
+                    Pregação
+                  </a>
+                  <a
+                    href="./thumbnail-youtube.html"
+                  >
+                    Thumbnail para Youtube
+                  </a>
+                </li>
+              </ul>
+              <p class="menu-label">
+                Para desenvolvedores
+              </p>
+              <ul class="menu-list">
+                <li>
+                  <a
+                    href="https://github.com/allangrds/gerador-de-imagem-pregacao/"
+                  >
+                    Github
+                  </a>
+                </li>
+              </ul>
+            </aside>
+          </div>
+          <div class="column">
+            <h1 class="title">
+              Thumbnail para Youtube
+            </h1>
+            <p class="subtitle">
+              Quem pregou? Que tipo de culto? Qual o título da mensagem?
+            </p>
+            <div class="box">
+              <form id="form">
+                <div class="field">
+                  <label class="form-preacher-name">Nome do pregador</label>
+                  <div class="control">
+                    <input
+                      id="form-preacher-name"
+                      class="input"
+                      type="text"
+                      placeholder="Digite o nome do pregador"
+                      name="preacher-name"
+                      required
+                    />
+                  </div>
+                </div>
+                <div class="field">
+                  <label class="form-preacher-image-url">URL da imagem do pregador</label>
+                  <div class="control">
+                    <input
+                      id="form-preacher-image-url"
+                      class="input"
+                      type="text"
+                      placeholder="Digite a url da imagem do pregador"
+                      name="preacher-image-url"
+                    />
+                  </div>
+                </div>
+                <div class="field">
+                  <label class="form-preacher-image-input">Imagem do pregador</label>
+                  <div class="control">
+                    <input
+                      id="form-preacher-image-input"
+                      class="input"
+                      type="file"
+                      placeholder="Digite a url da imagem do pregador"
+                      name="preacher-image-input"
+                    />
+                  </div>
+                </div>
+                <div class="field">
+                  <label class="form-preacher-message">Título da mensagem</label>
+                  <div class="control">
+                    <input
+                      id="form-preacher-message"
+                      class="input"
+                      type="text"
+                      placeholder="Digite o título da mensagem"
+                      name="preacher-message-title"
+                    />
+                  </div>
+                </div>
+                <div class="field">
+                  <label class="form-preacher-message-date">Quando aconteceu a pregação</label>
+                  <div class="control">
+                    <div class="select">
+                      <select
+                        required
+                        id="form-preacher-message-date"
+                        name="preacher-message-date"
+                      >
+                        <option selected disabled>Escolha em qual dia ocorreu a mensagem</option>
+                        <option value="sabado">Sábado</option>
+                        <option value="domingo">Domingo</option>
+                        <option value="quarta">Quarta</option>
+                      </select>
+                    </div>
+                  </div>
+                </div>
+                <button
+                  class="button is-fullwidth mt-6"
+                >
+                  Visualizar imagem
+                </button>
+              </form>
+              <button
+                class="button is-fullwidth is-primary mt-2"
+                type="button"
+                id="btn-save-image"
+              >
+                Salvar imagem
+              </button>
+            </div>
+
+            <p class="title">
+              Youtube
+            </p>
+            <div class="box">
+              <div class="thumb">
+                <div class="content">
+                  <img
+                    class="background-image preacher-message-image"
+                    src="https://www.adventistreview.org/phpthumbsup/w/1000/h/500/zc/1/src/assets/public/news/2018-04/church-survival-is-guaranteed-because-of-gods-grace-says-mark-finley.jpg"
+                    alt=""
+                    class="background-image"
+                  />
+                  <div class="cult-type">
+                    <p class="preacher-message-date">Culto de sábado</p>
+                  </div>
+                  <div class="cult-name">
+                    <p class="title preacher-message-title">Compaixão pelos imperdoáveis</p>
+                    <p class="preacher preacher-message-name">Pr. Thiago da Silva</p>
+                  </div>
+                </div>
+                <div class="seven"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="../assets/js/index.js"></script>
+  </body>
+</html>

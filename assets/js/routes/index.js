@@ -1,5 +1,6 @@
 import {
   preacher,
+  thumbnailYoutube,
 } from '../pages'
 
 const routes = {}
@@ -26,6 +27,7 @@ function router () {
 }
 
 route('/pages/pregacao.html', preacher)
+route('/pages/thumbnail-youtube.html', thumbnailYoutube)
 
 window.addEventListener('load', router)
 window.addEventListener('hashchange', router)
