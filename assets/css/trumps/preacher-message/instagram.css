@@ -9,7 +9,7 @@
     }
 
     & .preacher-message-title {
-      line-height: 80px;
+      line-height: 80px !important;
     }
 
     & .preacher-message-border {

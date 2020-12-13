@@ -9,73 +9,77 @@
   background-repeat: no-repeat;
 }
 
-.preacher-message-background {
-  height: 100%;
-  width: 100%;
-  background-color: rgba(0, 0, 0, 0.85);
-}
+.preacher-message.whatsapp,
+.preacher-message.facebook,
+.preacher-message.instagram {
+  .preacher-message-background {
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.85);
+  }
 
-.preacher-message-border {
-  height: 100%;
-  width: 100%;
-  padding: 20px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-evenly;
-}
+  .preacher-message-border {
+    height: 100%;
+    width: 100%;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+  }
 
-.preacher-message-title {
-  font-family: "Dancing Script", cursive;
-  color: var(--white);
-  text-align: center;
-  font-size: 2.2em;
-  margin-bottom: 20px;
-  width: 100%;
-  line-height: 35px;
-}
+  .preacher-message-title {
+    font-family: "Dancing Script", cursive;
+    color: var(--white);
+    text-align: center;
+    font-size: 2.2em;
+    margin-bottom: 20px;
+    width: 100%;
+    line-height: 35px;
+  }
 
-.preacher-message-group {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
+  .preacher-message-group {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
 
-.preacher-message-image {
-  border-radius: 900px;
-  margin-bottom: 10px;
-}
+  .preacher-message-image {
+    border-radius: 900px;
+    margin-bottom: 10px;
+  }
 
-.preacher-message-name {
-  color: var(--white);
-  font-family: "Lato", sans-serif;
-  text-align: center;
-  font-size: 1em;
-  width: 100%;
-  font-weight: 700;
-  text-transform: uppercase;
-}
+  .preacher-message-name {
+    color: var(--white);
+    font-family: "Lato", sans-serif;
+    text-align: center;
+    font-size: 1em;
+    width: 100%;
+    font-weight: 700;
+    text-transform: uppercase;
+  }
 
-.preacher-message-date {
-  font-weight: 400;
-  color: var(--white);
-  font-family: "Lato", sans-serif;
-  text-align: center;
-  font-size: 1em;
-  width: 100%;
-}
+  .preacher-message-date {
+    font-weight: 400;
+    color: var(--white);
+    font-family: "Lato", sans-serif;
+    text-align: center;
+    font-size: 1em;
+    width: 100%;
+  }
 
-.preacher-message-church-logo {
-  margin-bottom: 10px;
-  margin-top: 20px;
-}
+  .preacher-message-church-logo {
+    margin-bottom: 10px;
+    margin-top: 20px;
+  }
 
-.preacher-message-church-address {
-  color: var(--white);
-  font-family: "Lato", sans-serif;
-  text-align: center;
-  font-weight: 300;
-  font-size: 0.9em;
-  width: 100%;
+  .preacher-message-church-address {
+    color: var(--white);
+    font-family: "Lato", sans-serif;
+    text-align: center;
+    font-weight: 300;
+    font-size: 0.9em;
+    width: 100%;
+  }
 }

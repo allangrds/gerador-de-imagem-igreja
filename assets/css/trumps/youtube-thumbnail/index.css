@@ -1,0 +1,76 @@
+.thumb {
+  background-color: red;
+  max-width: 1280px !important;
+  max-height: 720px;
+  height: 720px;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1080px 200px;
+  overflow: hidden;
+}
+
+.seven {
+  background-color: #C6B98C;
+  max-height: 720px;
+  height: 720px;
+}
+
+.content {
+  background-color: #000;
+  max-height: 720px;
+  height: 720px;
+  max-width: 1080px;
+  position: relative;
+}
+
+.background-image {
+  max-width: 1080px;
+  width: 100%;
+  height: 100%;
+  opacity: 0.2;
+}
+
+.cult-type {
+  background-color: #C6B98C;
+  position: absolute;
+  top: 40px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  padding-left: 30px;
+  font-family: "Lato", sans-serif;
+  color: #fff;
+  font-size: 50px;
+  text-transform: lowercase;
+  width: 500px;
+}
+
+.cult-name {
+  width: 100%;
+  position: absolute;
+  top: 200px;
+  padding-left: 30px;
+}
+
+.cult-name .title {
+  font-family: "Merriweather";
+  color: #C6B98C;
+  font-size: 100px;
+  text-transform: uppercase;
+  max-width: 15ch;
+  font-weight: normal;
+  margin: 0 !important;
+  text-align: left;
+  width: 100%;
+}
+
+.cult-name .preacher {
+  font-family: "Lato", sans-serif;
+  color: #fff;
+  font-size: 55px;
+  font-weight: bold;
+  text-transform: uppercase;
+  margin-bottom: 0;
+  margin-top: 10px;
+  text-align: left;
+  width: 100%;
+}

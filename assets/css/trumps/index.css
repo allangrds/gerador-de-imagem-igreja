@@ -1,4 +1,5 @@
 @import "./preacher-message/index.css";
+@import "./youtube-thumbnail/";
 
 .menu-column {
   min-width: 250px;
