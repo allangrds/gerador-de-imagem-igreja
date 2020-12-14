@@ -2,6 +2,7 @@
   background-color: red;
   max-width: 1280px !important;
   max-height: 720px;
+  min-width: 1280px;
   height: 720px;
   width: 100%;
   display: grid;
