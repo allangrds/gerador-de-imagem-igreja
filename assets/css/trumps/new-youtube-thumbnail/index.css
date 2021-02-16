@@ -1,0 +1,61 @@
+.new-thumb {
+  max-width: 1280px !important;
+  max-height: 720px;
+  min-width: 1280px;
+  height: 720px;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1080px 200px;
+  overflow: hidden;
+  position: relative;
+
+  .background-image {
+    background-image: url('../../../images/new-youtube-thumbnail/background.png');
+    min-width: 1280px;
+    position: relative;
+    z-index: 10;
+    opacity: 1;
+  }
+
+  .preacher-image {
+    min-width: 1172px !important;
+    position: relative;
+    left: -972px;
+    z-index: 8;
+  }
+
+  .preacher-background {
+    background-color: rgba(0, 0, 0, 0.7);
+    min-width: 1172px !important;
+    height: 700px;
+    position: absolute;
+    z-index: 9;
+    left: 108px;
+  }
+
+  .preacher-name {
+    color: #000;
+    font-family: "GillSans", sans-serif;
+    text-transform: uppercase;
+    position: absolute;
+    z-index: 11;
+    bottom: 17px;
+    left: 50px;
+    font-size: 3em;
+  }
+
+  .message {
+    background: transparent;
+    color: #fff;
+    font-family: "GillSans", sans-serif;
+    font-weight: bold;
+    text-transform: uppercase;
+    position: absolute;
+    line-height: 100px;
+    z-index: 11;
+    bottom: 120px;
+    left: 50px;
+    font-size: 6.4em;
+    max-width: 15ch;
+  }
+}

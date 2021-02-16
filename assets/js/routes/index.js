@@ -1,4 +1,5 @@
 import {
+  newThumbnailYoutube,
   preacher,
   thumbnailYoutube,
 } from '../pages'
@@ -28,6 +29,7 @@ function router () {
 
 route('/pages/pregacao.html', preacher)
 route('/pages/thumbnail-youtube.html', thumbnailYoutube)
+route('/pages/new-thumbnail-youtube.html', newThumbnailYoutube)
 
 window.addEventListener('load', router)
 window.addEventListener('hashchange', router)

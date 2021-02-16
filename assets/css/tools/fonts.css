@@ -1,0 +1,19 @@
+@font-face {
+  font-family: "GillSans";
+  font-weight: normal;
+  src: url('../../fonts/gill-sans/GillSans.eot');
+  src: url('../../fonts/gill-sans/GillSans.eot?#iefix') format('embedded-opentype'),
+    url('../../fonts/gill-sans/GillSans.woff2') format('woff2'),
+    url('../../fonts/gill-sans/GillSans.woff') format('woff'),
+    url('../../fonts/gill-sans/GillSans.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: "GillSans";
+  font-weight: bold;
+  src: url('../../fonts/gill-sans/GillSans-Bold.eot');
+  src: url('../../fonts/gill-sans/GillSans-Bold.eot?#iefix') format('embedded-opentype'),
+    url('../../fonts/gill-sans/GillSans-Bold.woff2') format('woff2'),
+    url('../../fonts/gill-sans/GillSans-Bold.woff') format('woff'),
+    url('../../fonts/gill-sans/GillSans-Bold.ttf') format('truetype');
+}
