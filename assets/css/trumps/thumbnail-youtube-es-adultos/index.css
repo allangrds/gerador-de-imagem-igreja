@@ -1,0 +1,63 @@
+.thumb-youtube-es-adultos {
+  max-width: 1280px !important;
+  max-height: 720px;
+  min-width: 1280px;
+  height: 720px;
+  width: 100%;
+  display: grid;
+  overflow: hidden;
+  position: relative;
+
+  .background-image-yt {
+    opacity: 1;
+    position: absolute;
+    z-index: 1;
+    width: 100%;
+  }
+
+  .background-image-yt-2 {
+    opacity: 1;
+    position: absolute;
+    z-index: 2;
+    width: 100%;
+  }
+
+  .gradient-background {
+    position: relative;
+    z-index: 3;
+    width: 100%;
+    padding: 35px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+  }
+
+  .es-jovem-number {
+    font-family: 'Lato', sans-serif;
+    font-weight: 300;
+    text-transform: uppercase;
+    font-size: 45px;
+    text-align: center;
+    margin-bottom: 20px;
+    color: #000;
+  }
+
+  .es-jovem-title-1 {
+    font-weight: light;
+  }
+
+  .es-jovem-title-2 {
+    font-weight: bold;
+  }
+
+  .es-jovem-title-1,
+  .es-jovem-title-2 {
+    font-family: 'Open Sans', sans-serif;
+    margin: 0;
+    line-height: 100px;
+    text-transform: uppercase;
+    text-align: center;
+    color: #000;
+    font-size: 90px;
+  }
+}

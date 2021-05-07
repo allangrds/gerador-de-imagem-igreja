@@ -3,6 +3,7 @@ import {
   preacher,
   thumbnailYoutube,
   thumbnailYoutubeEsJovem,
+  thumbnailYoutubeEsAdultos,
 } from '../pages'
 
 const routes = {}
@@ -32,6 +33,7 @@ route('/pages/pregacao.html', preacher)
 route('/pages/thumbnail-youtube.html', thumbnailYoutube)
 route('/pages/new-thumbnail-youtube.html', newThumbnailYoutube)
 route('/pages/thumbnail-youtube-es-jovem.html', thumbnailYoutubeEsJovem)
+route('/pages/thumbnail-youtube-es-adultos.html', thumbnailYoutubeEsAdultos)
 
 window.addEventListener('load', router)
 window.addEventListener('hashchange', router)
