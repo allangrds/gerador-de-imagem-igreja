@@ -1,6 +1,7 @@
 @import "./preacher-message/index.css";
 @import "./youtube-thumbnail/";
 @import "./new-youtube-thumbnail/";
+@import "./thumbnail-youtube-es-jovem/";
 
 .menu-column {
   min-width: 250px;

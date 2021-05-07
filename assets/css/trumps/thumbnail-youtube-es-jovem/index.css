@@ -1,0 +1,57 @@
+.thumb-youtube-es-jovem {
+  max-width: 1280px !important;
+  max-height: 720px;
+  min-width: 1280px;
+  height: 720px;
+  width: 100%;
+  display: grid;
+  overflow: hidden;
+  position: relative;
+
+  .background-image-yt {
+    opacity: 1;
+    position: absolute;
+    z-index: 10;
+    width: 100%;
+  }
+
+  .gradient-background {
+    background: linear-gradient(90deg, rgba(0,0,0,0) 0%, rgba(0,0,0,1) 100%);
+    position: relative;
+    z-index: 10;
+    width: 100%;
+    padding: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: center;
+  }
+
+  .es-jovem-number {
+    color: #fff;
+    font-family: 'Roboto';
+    text-transform: uppercase;
+    margin-bottom: 40px;
+    font-size: 65px;
+  }
+
+  .es-jovem-title-1 {
+    font-weight: light;
+    font-size: 115px;
+  }
+
+  .es-jovem-title-2 {
+    font-weight: bold;
+    font-size: 120px;
+  }
+
+  .es-jovem-title-1,
+  .es-jovem-title-2 {
+    font-family: 'Open Sans';
+    color: #fff;
+    margin: 0;
+    line-height: 120px;
+    text-transform: uppercase;
+    text-align: right;
+  }
+}
