@@ -3,6 +3,7 @@
 @import "./new-youtube-thumbnail/";
 @import "./thumbnail-youtube-es-jovem/";
 @import "./thumbnail-youtube-es-adultos/";
+@import "./thumbnail-youtube-nova-visao/";
 
 .menu-column {
   min-width: 250px;

@@ -3,6 +3,7 @@ import thumbnailYoutube from './thumbnail-youtube'
 import newThumbnailYoutube from './new-thumbnail-youtube'
 import thumbnailYoutubeEsJovem from './thumbnail-youtube-es-jovem'
 import thumbnailYoutubeEsAdultos from './thumbnail-youtube-es-adultos'
+import thumbnailYoutubeNovaVisao from './thumbnail-youtube-nova-visao'
 
 export {
   preacher,
@@ -10,4 +11,5 @@ export {
   newThumbnailYoutube,
   thumbnailYoutubeEsJovem,
   thumbnailYoutubeEsAdultos,
+  thumbnailYoutubeNovaVisao,
 }

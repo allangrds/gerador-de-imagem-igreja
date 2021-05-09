@@ -11,7 +11,7 @@
     <meta name="robots" content="index, follow">
 
     <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Dacing+Script:wght@700&family=Lato:wght@100;300;400;700&family=Merriweather:wght@400&family=Roboto&family=Open+Sans:wght@300;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Dacing+Script:wght@700&family=Lato:wght@100;300;400;700&family=Merriweather:wght@400&family=Roboto&family=Open+Sans:wght@300;700&family=Bangers&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../assets/css/index.css" />
   </head>
   <body>
@@ -73,7 +73,7 @@
           </div>
           <div class="column">
             <h1 class="title">
-              Thumbnail do Youtube para ES Adultos
+              Thumbnail do Youtube para "Nova Visão para Novo Tempo"
             </h1>
             <p class="subtitle">
               Qual lição? Qual o título?
@@ -81,13 +81,13 @@
             <div class="box">
               <form id="form">
                 <div class="field">
-                  <label class="form-preacher-name">Número da lição</label>
+                  <label class="form-preacher-name">Número da aula</label>
                   <div class="control">
                     <input
                       id="form-preacher-name"
                       class="input"
                       type="text"
-                      placeholder="Digite o número de lição"
+                      placeholder="Digite o número de aula"
                       name="preacher-name"
                       required
                     />
@@ -118,27 +118,44 @@
                   </div>
                 </div>
                 <div class="field">
-                  <label class="form-preacher-message">Título da lição 1</label>
+                  <label class="form-preacher-message">Título da aula</label>
                   <div class="control">
                     <input
                       id="form-preacher-message"
                       class="input"
                       type="text"
-                      placeholder="Digite o título da lição 1"
+                      placeholder="Digite o título da aula"
                       name="preacher-message-title"
                     />
                   </div>
                 </div>
                 <div class="field">
-                  <label class="form-preacher-message-2">Título da lição 2</label>
+                  <label class="form-position">Posição</label>
                   <div class="control">
-                    <input
-                      id="form-preacher-message-2"
+                    <select
                       class="input"
-                      type="text"
-                      placeholder="Digite o título da lição 2"
-                      name="preacher-message-title-2"
-                    />
+                      name="form-position"
+                      id="form-position"
+                    >
+                      <option value="centro" selected>centro</option>
+                      <option value="esquerda">esquerda</option>
+                      <option value="direita">direita</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="field">
+                  <label class="form-color">Cor</label>
+                  <div class="control">
+                    <select
+                      class="input"
+                      name="form-color"
+                      id="form-color"
+                    >
+                      <option value="verde" selected>verde</option>
+                      <option value="azul">azul</option>
+                      <option value="vermelho">vermelho</option>
+                      <option value="roxo">roxo</option>
+                    </select>
                   </div>
                 </div>
                 <button
@@ -160,29 +177,19 @@
               Youtube
             </p>
             <div class="box">
-              <div class="thumb-youtube-es-adultos">
+              <div class="thumb-youtube-nova-visao">
                 <img
                   class="background-image-yt"
-                  src="../assets/images/thumbnail-youtube-es-jovem/background.jpg"
+                  src="../assets/images/thumbnail-youtube-nova-visao/background.jpg"
                   alt=""
                 />
-                <img
-                  class="background-image-yt-2"
-                  src="../assets/images/thumbnail-youtube-es-adultos/background.png"
-                  alt=""
-                />
-                <div class="gradient-background">
+                <div class="es-container centro verde" id="text-container">
                   <p class="es-jovem-number">
-                    Lição 2
+                    #1
                   </p>
-                  <div style="text-align: center;">
-                    <span class="es-jovem-title-1">
-                      duras eras,
-                    </span>
-                    <span class="es-jovem-title-2">
-                      uma mensagem
-                    </span>
-                  </div>
+                  <p class="es-jovem-title-1">
+                    Se Deus existe, por que sofremos?
+                  </p>
                 </div>
               </div>
             </div>

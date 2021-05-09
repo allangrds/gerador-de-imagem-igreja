@@ -1,0 +1,89 @@
+.thumb-youtube-nova-visao {
+  max-width: 1280px !important;
+  max-height: 720px;
+  min-width: 1280px;
+  height: 720px;
+  width: 100%;
+  display: grid;
+  overflow: hidden;
+  position: relative;
+
+  .background-image-yt {
+    opacity: 1;
+    position: absolute;
+    z-index: 1;
+    width: 100%;
+  }
+
+  .es-container {
+    position: relative;
+    z-index: 2;
+
+    .es-jovem-number {
+      margin-bottom: 50px !important;
+    }
+
+    .es-jovem-number,
+    .es-jovem-title-1 {
+      font-size: 120px;
+      position: relative;
+      z-index: 2;
+      font-family: "Bangers", sans-serif;
+      text-align: center;
+      margin: 0;
+      line-height: 120px;
+    }
+  }
+
+  .es-container.verde {
+    .es-jovem-number,
+    .es-jovem-title-1 {
+      color: #27ae60;
+      text-shadow: 0 0 5px #16a085;
+    }
+  }
+
+  .es-container.vermelho {
+    .es-jovem-number,
+    .es-jovem-title-1 {
+      color: #e74c3c;
+      text-shadow: 0 0 5px #c0392b;
+    }
+  }
+
+  .es-container.roxo {
+    .es-jovem-number,
+    .es-jovem-title-1 {
+      color: #9b59b6;
+      text-shadow: 0 0 5px #8e44ad;
+    }
+  }
+
+  .es-container.azul {
+    .es-jovem-number,
+    .es-jovem-title-1 {
+      color: #3498db;
+      text-shadow: 0 0 5px #2980b9;
+    }
+  }
+
+  .es-container.centro {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 30px 40px;
+  }
+
+  .es-container.esquerda {
+    width: 800px;
+    transform: rotate(-20deg);
+    padding: 30px 40px;
+  }
+
+  .es-container.direita {
+    width: 800px;
+    transform: rotate(20deg);
+    padding: 30px 40px;
+    right: -429px;
+  }
+}
