@@ -10,7 +10,7 @@
   position: relative;
 
   .background-image {
-    background-image: url('../../../images/new-youtube-thumbnail/background.png');
+    background-image: url('../../../images/new-youtube-thumbnail/new-background.png');
     min-width: 1280px;
     position: relative;
     z-index: 10;
