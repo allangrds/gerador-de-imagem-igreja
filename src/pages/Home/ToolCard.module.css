@@ -1,0 +1,93 @@
+.card {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  overflow: hidden;
+  border-radius: var(--radius-card);
+}
+
+.available {
+  border: 1px solid var(--line);
+  background: var(--surface);
+  color: var(--ink);
+  text-decoration: none;
+  box-shadow: 0 1px 2px rgb(20 18 16 / 6%);
+  transition:
+    box-shadow 0.15s,
+    border-color 0.15s;
+}
+
+.available:hover {
+  border-color: var(--gold);
+  color: var(--ink);
+  box-shadow: 0 16px 32px -20px rgb(20 18 16 / 35%);
+}
+
+.soon {
+  border: 1px dashed var(--line-strong);
+}
+
+.soonPreview {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  aspect-ratio: 16 / 9;
+  padding: 20px;
+  background: #efeae0;
+}
+
+.soonFrame {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  border: 1.5px solid var(--line-strong);
+  border-radius: 6px;
+  background: var(--paper);
+  color: var(--olive-text);
+  font-size: 12px;
+  text-align: center;
+}
+
+.body {
+  display: flex;
+  flex-grow: 1;
+  flex-direction: column;
+  gap: 10px;
+  padding: 20px 22px 22px;
+}
+
+.meta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  color: var(--olive-text);
+  font-size: 13px;
+}
+
+.name {
+  font-size: 22px;
+}
+
+.soon .name {
+  color: var(--ink-soft);
+}
+
+.description {
+  color: var(--ink-soft);
+  font-size: 15px;
+}
+
+.soon .description {
+  color: var(--olive-text);
+}
+
+.cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: auto;
+  padding-top: 6px;
+  font-weight: 700;
+}

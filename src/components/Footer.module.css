@@ -1,0 +1,48 @@
+.footer {
+  padding: 40px 24px;
+  background: var(--ink);
+  color: #e9e3d3;
+}
+
+.inner {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  max-width: var(--content-width);
+  margin: 0 auto;
+}
+
+.church {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.address {
+  display: flex;
+  flex-direction: column;
+  font-style: normal;
+  line-height: 1.4;
+}
+
+.address strong {
+  color: var(--paper);
+}
+
+.muted {
+  color: var(--muted-on-dark);
+  font-size: 14px;
+}
+
+.links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  font-size: 14px;
+}
+
+.links a {
+  color: #e9e3d3;
+}

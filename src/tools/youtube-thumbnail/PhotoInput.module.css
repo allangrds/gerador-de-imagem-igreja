@@ -1,0 +1,139 @@
+.fieldset {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+.legend {
+  margin-bottom: 6px;
+  padding: 0;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.dropzone {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  min-height: 140px;
+  padding: 16px;
+  border: 1.5px dashed #b3a780;
+  border-radius: 12px;
+  background: var(--paper-soft);
+  color: var(--ink);
+  text-align: center;
+  cursor: pointer;
+}
+
+.dropzone:hover {
+  border-color: var(--gold-deep);
+}
+
+.dropzone svg {
+  color: var(--olive-text);
+}
+
+.dragging {
+  border: 2px solid var(--gold-deep);
+  background: #f1ead3;
+}
+
+.dropTitle {
+  font-weight: 700;
+}
+
+.dropHint {
+  color: var(--olive-text);
+  font-size: 14px;
+}
+
+.chip {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: var(--paper-soft);
+}
+
+.chipImage {
+  flex-shrink: 0;
+  width: 72px;
+  height: 48px;
+  border-radius: 6px;
+  object-fit: cover;
+}
+
+.chipText {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.chipName {
+  overflow: hidden;
+  font-size: 14px;
+  font-weight: 700;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.chipDetail {
+  color: var(--olive-text);
+  font-size: 13px;
+}
+
+.smallButton {
+  min-height: 36px;
+  padding: 0 12px;
+  border: 1px solid var(--line-strong);
+  border-radius: var(--radius-control);
+  background: var(--surface);
+  color: var(--ink);
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.iconButton {
+  display: flex;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border: 0;
+  border-radius: var(--radius-control);
+  background: transparent;
+  color: var(--olive-text);
+  cursor: pointer;
+}
+
+.iconButton:hover {
+  background: var(--gold-tint);
+  color: var(--ink);
+}
+
+.urlForm {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.error {
+  display: flex;
+  gap: 8px;
+  color: var(--error);
+  font-size: 14px;
+}
+
+.error svg {
+  flex-shrink: 0;
+  margin-top: 2px;
+}

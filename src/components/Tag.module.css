@@ -1,0 +1,19 @@
+.tag {
+  display: inline-block;
+  padding: 4px 10px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.available {
+  background: var(--gold-tint);
+  color: var(--ink-soft);
+}
+
+.soon {
+  background: #e7e3da;
+  color: var(--olive-text);
+}

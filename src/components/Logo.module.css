@@ -1,0 +1,15 @@
+.tile {
+  display: flex;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
+  width: 56px;
+  height: 44px;
+  background: var(--paper);
+  border-radius: var(--radius-control);
+}
+
+.tile img {
+  width: auto;
+  height: 34px;
+}

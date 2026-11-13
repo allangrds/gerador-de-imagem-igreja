@@ -1,9 +1,0 @@
-{
-    "env": {
-      "browser": true
-    },
-    "extends": ["pagarme-base"],
-    "rules": {
-      "strict": 1
-    }
-  }
