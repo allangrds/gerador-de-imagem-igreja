@@ -19,10 +19,13 @@ describe('Home', () => {
     expect(
       screen.getByRole('link', { name: /Agenda para Instagram/ })
     ).toHaveAttribute('href', '/agenda-instagram')
-    expect(screen.getAllByText('Em breve')).toHaveLength(1)
-    expect(screen.getByText('3 disponíveis · 1 em breve')).toBeInTheDocument()
     expect(
-      screen.getByText('Três prontas para usar hoje, outras a caminho.')
+      screen.getByRole('link', { name: /Mensagens para WhatsApp/ })
+    ).toHaveAttribute('href', '/mensagens-whatsapp')
+    expect(screen.getAllByText('Em breve')).toHaveLength(1)
+    expect(screen.getByText('4 disponíveis · 1 em breve')).toBeInTheDocument()
+    expect(
+      screen.getByText('Quatro prontas para usar hoje, outras a caminho.')
     ).toBeInTheDocument()
   })
 })

@@ -106,3 +106,26 @@
   width: 22%;
   box-shadow: 0 6px 14px -6px rgb(20 18 16 / 50%);
 }
+
+.chat {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  padding: 16px;
+  background: #efe7da;
+}
+
+.bubble {
+  display: flex;
+  flex-direction: column;
+  max-width: 80%;
+  padding: 8px 12px;
+  border-radius: 10px 2px 10px 10px;
+  background: #d9fdd3;
+  color: #111b21;
+  font-size: 12px;
+  line-height: 1.4;
+  box-shadow: 0 1px 1px rgb(20 18 16 / 14%);
+}

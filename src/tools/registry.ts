@@ -37,6 +37,15 @@ export const tools: Tool[] = [
     path: '/agenda-instagram',
   },
   {
+    id: 'whatsapp-messages',
+    name: 'Mensagens para WhatsApp',
+    description:
+      'Convites, avisos e boas-vindas prontos para copiar, com negrito e itálico do WhatsApp.',
+    size: 'Texto · copiar e colar',
+    status: 'available',
+    path: '/mensagens-whatsapp',
+  },
+  {
     id: 'instagram-story',
     name: 'Story de avisos',
     description: 'Avisos da semana e convites no formato vertical dos stories.',

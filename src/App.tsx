@@ -3,6 +3,7 @@ import { Layout } from './components/Layout'
 import { Home } from './pages/Home/Home'
 import { BulletinEditor } from './tools/bulletin/Editor'
 import { AgendaEditor } from './tools/instagram-agenda/Editor'
+import { WhatsappEditor } from './tools/whatsapp-messages/Editor'
 import { ThumbnailEditor } from './tools/youtube-thumbnail/Editor'
 
 export function App() {
@@ -13,6 +14,7 @@ export function App() {
         <Route path="thumbnail-youtube" element={<ThumbnailEditor />} />
         <Route path="boletim" element={<BulletinEditor />} />
         <Route path="agenda-instagram" element={<AgendaEditor />} />
+        <Route path="mensagens-whatsapp" element={<WhatsappEditor />} />
         <Route path="*" element={<Home />} />
       </Route>
     </Routes>
