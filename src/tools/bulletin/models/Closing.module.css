@@ -1,0 +1,67 @@
+.body {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10cqw;
+  min-height: 0;
+  padding: 8cqw;
+}
+
+.logo {
+  width: auto;
+  height: 40cqw;
+}
+
+.socials {
+  display: flex;
+  justify-content: center;
+  gap: 8cqw;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+/* Same black as the logo. */
+.socialIcon {
+  display: block;
+  width: 9cqw;
+  height: 9cqw;
+  color: var(--ink);
+}
+
+.footer {
+  padding: 8cqw;
+  background: var(--ink);
+  text-align: center;
+}
+
+.address {
+  color: #e9e3d3;
+  font-size: 3.8cqw;
+  line-height: 1.45;
+  white-space: pre-line;
+}
+
+/* Form */
+.fieldset {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin: 0;
+  padding: 14px;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+}
+
+.legend {
+  padding: 0 4px;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.hint {
+  color: var(--olive-text);
+  font-size: 13px;
+}

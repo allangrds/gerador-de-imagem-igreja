@@ -1,0 +1,135 @@
+.page {
+  gap: 6cqw;
+  padding: 12cqw 8cqw 10cqw;
+}
+
+.heading {
+  display: flex;
+  flex-direction: column;
+  gap: 2cqw;
+}
+
+.verse {
+  display: flex;
+  flex-direction: column;
+  gap: 2cqw;
+  margin: 0;
+}
+
+.verse p {
+  margin: 0;
+  color: #2e2a22;
+  font-size: 4.6cqw;
+  line-height: 1.45;
+}
+
+.verse cite {
+  color: var(--gold-deep);
+  font-size: 3.4cqw;
+  font-style: normal;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.pix {
+  display: flex;
+  align-items: center;
+  gap: 5cqw;
+  padding: 5cqw;
+  border: 0.3cqw solid var(--line);
+  border-radius: 3cqw;
+  background: var(--surface);
+}
+
+.qr {
+  flex-shrink: 0;
+  width: 30cqw;
+  height: 30cqw;
+  color: var(--ink);
+}
+
+.pixText {
+  display: flex;
+  flex-direction: column;
+  gap: 3cqw;
+  min-width: 0;
+}
+
+.badge {
+  align-self: flex-start;
+  padding: 0.8cqw 2.4cqw;
+  border-radius: 999px;
+  background: var(--ink);
+  color: var(--gold);
+  font-size: 2.8cqw;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+}
+
+.item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6cqw;
+}
+
+.label {
+  color: var(--olive-text);
+  font-size: 2.8cqw;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.key {
+  font-size: 4.4cqw;
+  font-weight: 700;
+  overflow-wrap: anywhere;
+}
+
+.value {
+  font-size: 3.6cqw;
+}
+
+.account {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 3cqw;
+  margin: 0;
+  padding-top: 4cqw;
+  border-top: 0.3cqw solid var(--line-strong);
+}
+
+.accountValue {
+  margin: 0;
+  font-size: 3.8cqw;
+  font-weight: 700;
+}
+
+.note {
+  margin-top: auto;
+  color: var(--ink-soft);
+  font-size: 3.6cqw;
+}
+
+/* Form */
+.fieldset {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin: 0;
+  padding: 14px;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+}
+
+.legend {
+  padding: 0 4px;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.row {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+}

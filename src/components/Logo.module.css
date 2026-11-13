@@ -1,0 +1,11 @@
+.logo {
+  flex-shrink: 0;
+  width: auto;
+  height: 32px;
+}
+
+@media (width >= 640px) {
+  .logo {
+    height: 40px;
+  }
+}

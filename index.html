@@ -1,97 +1,16 @@
 <!doctype html>
-
 <html lang="pt-BR">
   <head>
-    <meta charset="utf-8">
-    <title>Gerador de imagem de pregador</title>
-    <meta name="description" content="Gerador de imagem de pregador">
-    <meta name="author" content="allangrds">
-    <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="robots" content="index, follow">
-
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Lato:wght@100;300;400;700&family=Merriweather:wght@400&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="./assets/css/index.css" />
-    <script src="./assets/js/index.js"></script>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Artes da Comunidade Adventista do Belém prontas em minutos: thumbnails para YouTube e mais." />
+    <meta name="author" content="allangrds" />
+    <meta name="theme-color" content="#141210" />
+    <link rel="icon" type="image/png" href="/favicon.png" />
+    <title>Gerador para IASD Belém</title>
   </head>
   <body>
-    <div class="wrapper">
-      <div class="container">
-        <div class="columns">
-          <div class="column menu-column">
-            <aside class="menu">
-              <p class="menu-label">
-                Geral
-              </p>
-              <ul class="menu-list">
-                <li>
-                  <a
-                    href="./pages/pregacao.html"
-                  >
-                    Pregação
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="./pages/thumbnail-youtube.html"
-                  >
-                    Thumbnail para Youtube
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="./pages/new-thumbnail-youtube.html"
-                  >
-                    Nova Thumbnail para Youtube
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="./pages/thumbnail-youtube-es-jovem.html"
-                  >
-                    Thumbnail do Youtube para ES Jovem
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="./pages/thumbnail-youtube-es-adultos.html"
-                  >
-                    Thumbnail do Youtube para ES Adultos
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="./pages/thumbnail-youtube-nova-visao.html"
-                  >
-                    Thumbnail do Youtube para "Nova Visão"
-                  </a>
-                </li>
-              </ul>
-              <p class="menu-label">
-                Para desenvolvedores
-              </p>
-              <ul class="menu-list">
-                <li>
-                  <a
-                    href="https://github.com/allangrds/gerador-de-imagem-pregacao/"
-                  >
-                    Github
-                  </a>
-                </li>
-              </ul>
-            </aside>
-          </div>
-          <div class="column">
-            <h1 class="title">
-              Gerador de imagens para igrejas
-            </h1>
-            <p class="subtitle">
-              Aproveite!
-            </p>
-          </div>
-        </div>
-      </div>
-    </div>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>

@@ -1,0 +1,49 @@
+.shade {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgb(20 18 16 / 55%) 0%,
+    rgb(20 18 16 / 15%) 30%,
+    rgb(20 18 16 / 92%) 72%,
+    #141210 100%
+  );
+}
+
+.heading {
+  position: absolute;
+  right: 8cqw;
+  bottom: 34cqw;
+  left: 8cqw;
+  display: flex;
+  flex-direction: column;
+  gap: 4cqw;
+}
+
+.title {
+  line-height: 0.98;
+}
+
+.subtitle {
+  position: absolute;
+  bottom: 14cqw;
+  left: 0;
+  margin: 0;
+  padding: 3cqw 7cqw 3cqw 8cqw;
+  background: var(--gold);
+  color: var(--ink);
+  font-size: 4.6cqw;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+/* Fills the empty top of the page when there is no photo. */
+.logo {
+  position: absolute;
+  top: 40cqw;
+  left: 50%;
+  width: auto;
+  height: 32cqw;
+  transform: translateX(-50%);
+}

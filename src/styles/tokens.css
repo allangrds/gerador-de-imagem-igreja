@@ -1,0 +1,30 @@
+:root {
+  --ink: #141210;
+  --ink-soft: #4a4535;
+  --gold: #c6b98c;
+  --gold-hover: #b3a577;
+  --gold-deep: #8c7f55;
+  --gold-tint: #ede6d2;
+  --olive: #7b735a;
+  --olive-text: #5f5944;
+  --paper: #f6f2e9;
+  --paper-soft: #fbf9f4;
+  --surface: #fff;
+  --line: #e3dccb;
+  --line-strong: #cfc6ae;
+  --muted-on-dark: #bdb49a;
+  --stage: #3a362f;
+  --error: #a3362a;
+  --warning-bg: #f6eccf;
+  --warning-text: #6b4e12;
+  --success-dot: #3f7a4a;
+  --font-display: 'Cabin', system-ui, sans-serif;
+  --font-body: 'Lato', system-ui, sans-serif;
+  --font-art: 'GillSans', 'Gill Sans', 'Gill Sans MT', 'Cabin', sans-serif;
+  --radius-control: 8px;
+  --radius-card: 14px;
+  --radius-panel: 16px;
+  --focus-ring: 0 0 0 3px rgb(198 185 140 / 60%);
+  --content-width: 1200px;
+  --editor-width: 1360px;
+}

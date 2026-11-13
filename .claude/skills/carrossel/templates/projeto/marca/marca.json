@@ -1,0 +1,25 @@
+{
+  "nome": "Sua Marca",
+  "tagline": "",
+  "cores": {
+    "primaria": "#0869F5",
+    "texto": "#111827",
+    "texto-suave": "#5B7291",
+    "fundo": "#F8FAFF",
+    "fundo-profundo": "#E3EEFF",
+    "apoio": [
+      "#BFDFFF",
+      "#F3E9D2"
+    ]
+  },
+  "fonte": {
+    "familia": "Inter",
+    "arquivos": {},
+    "css": ""
+  },
+  "logo": "",
+  "plataformas": [
+    "Instagram",
+    "X"
+  ]
+}

@@ -1,0 +1,33 @@
+.page {
+  align-items: center;
+  justify-content: center;
+}
+
+.image {
+  width: 100%;
+  height: 100%;
+  max-width: none;
+}
+
+.empty {
+  color: var(--muted-on-dark);
+  font-size: 4cqw;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.fit {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.label {
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.hint {
+  color: var(--olive-text);
+  font-size: 13px;
+}

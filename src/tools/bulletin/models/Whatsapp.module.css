@@ -1,0 +1,56 @@
+.page {
+  gap: 6cqw;
+  padding: 16cqw 8cqw 10cqw;
+}
+
+.icon {
+  display: flex;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
+  width: 22cqw;
+  height: 22cqw;
+  border-radius: 999px;
+  background: var(--gold);
+  color: var(--ink);
+}
+
+.icon svg {
+  width: 11cqw;
+  height: 11cqw;
+}
+
+.heading {
+  display: flex;
+  flex-direction: column;
+  gap: 4cqw;
+}
+
+.qrRow {
+  display: flex;
+  align-items: center;
+  gap: 5cqw;
+  margin-top: auto;
+  padding-top: 6cqw;
+  border-top: 0.3cqw solid var(--ink-soft);
+}
+
+.qrFrame {
+  display: flex;
+  flex-shrink: 0;
+  padding: 2cqw;
+  border-radius: 2cqw;
+  background: var(--paper);
+}
+
+.qr {
+  width: 24cqw;
+  height: 24cqw;
+  color: var(--ink);
+}
+
+.qrText {
+  color: var(--muted-on-dark);
+  font-size: 3.8cqw;
+  line-height: 1.45;
+}

@@ -1,0 +1,10 @@
+{
+  "name": "carrossel-skill",
+  "private": true,
+  "type": "module",
+  "description": "Dependências dos scripts da skill /carrossel.",
+  "dependencies": {
+    "playwright": "^1.48.0",
+    "sharp": "^0.33.5"
+  }
+}

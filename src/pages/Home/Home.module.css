@@ -1,0 +1,171 @@
+.container {
+  max-width: var(--content-width);
+  margin: 0 auto;
+}
+
+.hero {
+  padding: 72px 24px 80px;
+}
+
+.heroInner {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 56px;
+}
+
+.heroText {
+  display: flex;
+  flex: 1 1 400px;
+  flex-direction: column;
+  gap: 20px;
+  min-width: 0;
+}
+
+.eyebrow {
+  color: var(--olive-text);
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.heroTitle {
+  font-size: clamp(36px, 5vw, 56px);
+  line-height: 1.08;
+  letter-spacing: -0.01em;
+}
+
+.lead {
+  max-width: 46ch;
+  color: var(--ink-soft);
+  font-size: 18px;
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 8px;
+}
+
+.heroArt {
+  display: flex;
+  flex: 1 1 520px;
+  flex-direction: column;
+  gap: 12px;
+  min-width: 0;
+  margin: 0;
+}
+
+.heroFrame {
+  overflow: hidden;
+  border-radius: var(--radius-card);
+  box-shadow: 0 24px 48px -24px rgb(20 18 16 / 45%);
+}
+
+.caption {
+  color: var(--olive-text);
+  font-size: 14px;
+}
+
+.tools {
+  padding: 24px 24px 88px;
+}
+
+.sectionHead {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 28px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid var(--line);
+}
+
+.sectionTitle {
+  font-size: 32px;
+}
+
+.muted {
+  color: var(--olive-text);
+}
+
+.count {
+  color: var(--olive-text);
+  font-size: 14px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 24px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.how {
+  padding: 72px 24px;
+  border-block: 1px solid var(--line);
+  background: var(--surface);
+}
+
+.steps {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 32px;
+  margin: 36px 0;
+  padding: 0;
+  list-style: none;
+}
+
+.step {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.step h3 {
+  font-size: 20px;
+}
+
+.step p {
+  color: var(--ink-soft);
+}
+
+.stepNumber {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 999px;
+  background: var(--gold);
+  font-family: var(--font-display);
+  font-weight: 700;
+}
+
+.privacy {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--olive-text);
+  font-size: 15px;
+}
+
+@media (width <= 600px) {
+  .hero {
+    padding: 48px 16px 56px;
+  }
+
+  .tools,
+  .how {
+    padding-inline: 16px;
+  }
+
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}
