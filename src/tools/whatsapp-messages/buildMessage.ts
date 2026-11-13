@@ -1,4 +1,5 @@
-import type { MessageData, MessageType } from './models'
+import { messageModels } from './models'
+import type { MessageData, MessageModel, MessageType } from './models'
 
 const ADDRESS = 'Rua Martim Affonso, 152 · Belenzinho'
 
@@ -11,12 +12,60 @@ function items(text: string, mark: string) {
     .map((line) => mark + line)
 }
 
+const SLOT = /\{(\w+)(\|upper)?\}/g
+const LIST_ITEM = /^- \{(\w+)\}$/
+const LEADING_EMOJI = /^\p{Extended_Pictographic}\uFE0F?\s*/u
+
+function fillTemplate(model: MessageModel, data: MessageData, emojis: boolean) {
+  const placeholder = (key: string) =>
+    model.fields.find((field) => field.key === key)?.placeholder ?? ''
+  const value = (key: string) => data[key]?.trim() ?? ''
+
+  const lines = model.template!.split('\n').flatMap((line) => {
+    const optional = line.startsWith('?')
+    const source = optional ? line.slice(1) : line
+    const keys = [...source.matchAll(SLOT)].map((match) => match[1])
+
+    if (optional && keys.some((key) => !value(key))) {
+      return []
+    }
+
+    const listKey = LIST_ITEM.exec(source)?.[1]
+
+    if (listKey) {
+      const entries = items(value(listKey), '- ')
+
+      return entries.length ? entries : [`- ${placeholder(listKey)}`]
+    }
+
+    const filled = source.replace(SLOT, (_, key: string, upper?: string) => {
+      const text = value(key) || placeholder(key)
+
+      return upper ? text.toLocaleUpperCase('pt-BR') : text
+    })
+
+    return [emojis ? filled : filled.replace(LEADING_EMOJI, '')]
+  })
+
+  // A dropped optional line must not leave two blank lines behind.
+  return lines
+    .join('\n')
+    .replace(/\n{3,}/g, '\n\n')
+    .trim()
+}
+
 // Returns plain text with the WhatsApp marks (*bold*, _italic_), ready to paste.
 export function buildMessage(
   type: MessageType,
   data: MessageData,
   emojis: boolean
 ) {
+  const model = messageModels.find((item) => item.type === type)
+
+  if (model?.template) {
+    return fillTemplate(model, data, emojis)
+  }
+
   const icon = (emoji: string) => (emojis ? `${emoji} ` : '')
   const bullet = (emoji: string) => (emojis ? `${emoji} ` : '• ')
 

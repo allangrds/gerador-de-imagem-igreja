@@ -221,6 +221,7 @@ export function WhatsappEditor() {
                 key={`${type}-${field.key}`}
                 label={field.label}
                 hint={field.hint}
+                placeholder={field.placeholder}
                 rows={4}
                 value={data[type][field.key]}
                 onChange={(event) => setField(field.key, event.target.value)}
@@ -230,6 +231,7 @@ export function WhatsappEditor() {
                 key={`${type}-${field.key}`}
                 label={field.label}
                 hint={field.hint}
+                placeholder={field.placeholder}
                 value={data[type][field.key]}
                 onChange={(event) => setField(field.key, event.target.value)}
               />

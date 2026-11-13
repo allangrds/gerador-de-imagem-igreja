@@ -91,4 +91,19 @@ describe('WhatsappEditor', () => {
     )
     expect(screen.getByLabelText('Pregador')).toHaveValue('Pr. Thiago da Silva')
   })
+
+  it('fills a model of the church line', async () => {
+    const user = userEvent.setup()
+    renderEditor()
+
+    await user.click(
+      screen.getByRole('button', { name: /^Pedido de alimentos para a ASA/ })
+    )
+    await user.type(screen.getByLabelText('Alimentos'), 'Arroz, 10 kg')
+
+    expect(
+      within(bubble()).getByText('Ajude a completar as próximas cestas')
+    ).toBeInTheDocument()
+    expect(within(bubble()).getByText('- Arroz, 10 kg')).toBeInTheDocument()
+  })
 })

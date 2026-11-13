@@ -1,5 +1,6 @@
-export type MessageType =
-  'culto' | 'aovivo' | 'aviso' | 'evento' | 'aniversario' | 'visitante'
+import { lineModels } from './lineModels'
+
+export type MessageType = string
 
 export type MessageField = {
   key: string
@@ -7,6 +8,8 @@ export type MessageField = {
   defaultValue: string
   multiline?: boolean
   hint?: string
+  // Shown in the message while the field is empty.
+  placeholder?: string
 }
 
 export type MessageModel = {
@@ -14,11 +17,14 @@ export type MessageModel = {
   name: string
   description: string
   fields: MessageField[]
+  // Final text with {field} slots; see lineModels.ts.
+  template?: string
 }
 
 export type MessageData = Record<string, string>
 
 export const messageModels: MessageModel[] = [
+  ...lineModels,
   {
     type: 'culto',
     name: 'Convite para o culto',
