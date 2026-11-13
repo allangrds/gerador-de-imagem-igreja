@@ -9,7 +9,7 @@ export function Footer() {
         <div className={styles.church}>
           <Logo />
           <address className={styles.address}>
-            <strong>Comunidade Adventista do Belém</strong>
+            <strong>Igreja Adventista do Belém SP</strong>
             <span className={styles.muted}>
               Rua Martim Affonso, 152 · Belenzinho · São Paulo – SP
             </span>

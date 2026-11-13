@@ -37,7 +37,7 @@ export function YouTubeListPreview({
         <span className={styles.listTitle}>
           Culto · {title || 'Título da mensagem'}
         </span>
-        <span className={styles.listChannel}>Comunidade Adventista do Belém</span>
+        <span className={styles.listChannel}>Igreja Adventista do Belém SP</span>
       </div>
     </section>
   )

@@ -13,7 +13,7 @@ export function Header() {
           <span className={styles.name}>
             <span className={styles.title}>Gerador para IASD Belém</span>
             <span className={styles.subtitle}>
-              Comunidade Adventista do Belém · SP
+              Igreja Adventista do Belém SP
             </span>
           </span>
         </Link>

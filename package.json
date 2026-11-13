@@ -2,7 +2,7 @@
   "name": "gerador-iasd-belem",
   "version": "2.0.0",
   "private": true,
-  "description": "Gerador de artes para a Comunidade Adventista do Belém",
+  "description": "Gerador de artes para a Igreja Adventista do Belém SP",
   "type": "module",
   "engines": {
     "node": ">=22.12.0"

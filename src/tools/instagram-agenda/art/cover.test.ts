@@ -43,7 +43,7 @@ describe('coverArt', () => {
   it('keeps the church name and the title above the band', () => {
     const { calls } = draw()
     const [, bandTop] = band(calls)!
-    const kicker = findRun(calls, 'COMUNIDADE ADVENTISTA DO BELÉM')
+    const kicker = findRun(calls, 'IGREJA ADVENTISTA DO BELÉM SP')
     const title = findRun(calls, 'AGENDA')
 
     expect(fontSizeOf(title.font)).toBeCloseTo(183.6)

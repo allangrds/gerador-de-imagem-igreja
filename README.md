@@ -1,6 +1,6 @@
 # Gerador para IASD Belém
 
-Ferramentas para a equipe de mídia da Comunidade Adventista do Belém criar as artes da igreja no layout oficial, direto no navegador.
+Ferramentas para a equipe de mídia da Igreja Adventista do Belém SP criar as artes da igreja no layout oficial, direto no navegador.
 
 ![CI](https://github.com/allangrds/gerador-de-imagem-igreja/workflows/CI/badge.svg?branch=main)
 

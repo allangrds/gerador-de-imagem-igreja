@@ -14,7 +14,7 @@ describe('cover', () => {
 
     expect(
       screen.getByRole('img', {
-        name: 'Comunidade Adventista do Belém. Agenda. Novembro',
+        name: 'Igreja Adventista do Belém SP. Agenda. Novembro',
       })
     ).toBeInTheDocument()
   })
