@@ -9,7 +9,7 @@ import {
   View,
 } from '@react-pdf/renderer'
 import { CHURCH_NAME } from '../types'
-import { titleSize } from '../format'
+import { titleSize } from '../../../lib/format'
 import type { CoverData } from '../types'
 import { PdfPage, base, colors, cq, tracking } from './styles'
 

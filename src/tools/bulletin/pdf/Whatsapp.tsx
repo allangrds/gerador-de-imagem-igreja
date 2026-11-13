@@ -1,6 +1,6 @@
 import { Text, View } from '@react-pdf/renderer'
 import type { WhatsappData } from '../types'
-import { titleSize } from '../format'
+import { titleSize } from '../../../lib/format'
 import { ARROW, Icon, MaybeLink, PdfPage, Qr, base, colors, cq } from './styles'
 
 const CHAT =

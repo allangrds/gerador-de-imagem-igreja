@@ -5,15 +5,16 @@ import type {
   FormProps,
   ModelProps,
 } from '../../../components/page-builder/types'
-import { monthAndYear, titleSize } from '../format'
+import { monthAndYear, titleSize } from '../../../lib/format'
 import { CHURCH_NAME } from '../types'
 import type { CoverData } from '../types'
 import styles from './Cover.module.css'
 import page from './Page.module.css'
+import { Sheet } from './Sheet'
 
 function Preview({ data }: ModelProps<CoverData>) {
   return (
-    <div className={page.page}>
+    <Sheet>
       {data.image && <img className={page.photo} src={data.image.src} alt="" />}
       <div className={styles.shade} />
       <div className={styles.heading}>
@@ -26,7 +27,7 @@ function Preview({ data }: ModelProps<CoverData>) {
         </h1>
       </div>
       {data.subtitle && <p className={styles.subtitle}>{data.subtitle}</p>}
-    </div>
+    </Sheet>
   )
 }
 

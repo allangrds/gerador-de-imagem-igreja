@@ -1,3 +1,4 @@
+import type { ListedEvent } from '../../components/page-builder/EventsField'
 import type { Photo } from '../../lib/image'
 
 export type CoverData = {
@@ -6,16 +7,9 @@ export type CoverData = {
   image: Photo | null
 }
 
-export type CalendarEvent = {
-  date: string
-  time: string
-  name: string
-  description: string
-}
-
 export type CalendarData = {
   title: string
-  events: CalendarEvent[]
+  events: ListedEvent[]
 }
 
 export type EventData = {

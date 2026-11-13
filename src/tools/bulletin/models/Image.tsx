@@ -8,11 +8,11 @@ import type {
 import { Segmented } from '../../../components/Segmented'
 import type { ImageData } from '../types'
 import styles from './Image.module.css'
-import page from './Page.module.css'
+import { Sheet } from './Sheet'
 
 function Preview({ data }: ModelProps<ImageData>) {
   return (
-    <div className={`${page.page} ${styles.page}`}>
+    <Sheet className={styles.page}>
       {data.image ? (
         <img
           className={styles.image}
@@ -23,7 +23,7 @@ function Preview({ data }: ModelProps<ImageData>) {
       ) : (
         <span className={styles.empty}>Sua imagem aqui</span>
       )}
-    </div>
+    </Sheet>
   )
 }
 

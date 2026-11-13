@@ -1,6 +1,6 @@
 import { Image, Text, View } from '@react-pdf/renderer'
 import type { PhotosData } from '../types'
-import { titleSize } from '../format'
+import { titleSize } from '../../../lib/format'
 import {
   ARROW,
   Icon,

@@ -5,16 +5,17 @@ import type {
   FormProps,
   ModelProps,
 } from '../../../components/page-builder/types'
-import { titleSize } from '../format'
+import { titleSize } from '../../../lib/format'
 import { PHOTOS_LIMIT } from '../types'
 import type { PhotosData } from '../types'
 import { ArrowIcon } from './ArrowIcon'
 import page from './Page.module.css'
+import { Sheet } from './Sheet'
 import styles from './Photos.module.css'
 
 function Preview({ data }: ModelProps<PhotosData>) {
   return (
-    <div className={page.page}>
+    <Sheet>
       <div className={styles.mosaic}>
         {Array.from({ length: PHOTOS_LIMIT }, (_, index) => (
           <div key={index} className={styles.tile}>
@@ -38,7 +39,7 @@ function Preview({ data }: ModelProps<PhotosData>) {
           <ArrowIcon />
         </span>
       </div>
-    </div>
+    </Sheet>
   )
 }
 

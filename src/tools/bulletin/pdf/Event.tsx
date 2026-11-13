@@ -8,7 +8,7 @@ import {
   Text,
   View,
 } from '@react-pdf/renderer'
-import { joinParts, longDate, titleSize } from '../format'
+import { joinParts, longDate, titleSize } from '../../../lib/format'
 import type { EventData } from '../types'
 import { Icon, PdfPage, base, colors, cq, tracking } from './styles'
 

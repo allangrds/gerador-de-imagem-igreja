@@ -1,5 +1,6 @@
 import {
   dayAndMonth,
+  formatTime,
   joinParts,
   longDate,
   monthAndYear,
@@ -61,5 +62,21 @@ describe('titleSize', () => {
       84 / (11 * 0.82),
       2
     )
+  })
+})
+
+describe('formatTime', () => {
+  it('writes hours and minutes the Brazilian way', () => {
+    expect(formatTime('19', '30')).toBe('19h30')
+    expect(formatTime('9', '5')).toBe('9h05')
+  })
+
+  it('shows only the hour when there are no minutes', () => {
+    expect(formatTime('19', '')).toBe('19h')
+    expect(formatTime('19', '0')).toBe('19h')
+  })
+
+  it('returns nothing without an hour', () => {
+    expect(formatTime('', '30')).toBe('')
   })
 })

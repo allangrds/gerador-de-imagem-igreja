@@ -1,13 +1,20 @@
 /* Sizes are in cqw (1% of the page width) so the preview scales to any width.
-   The PDF in ../pdf uses the same numbers through cq(). */
+   The PDF in ../pdf uses the same numbers through cq().
+   .page is only the size container: an element cannot use cqw against itself,
+   so padding and gaps go on .sheet inside it. */
 .page {
   container-type: inline-size;
   position: relative;
-  display: flex;
-  flex-direction: column;
   width: 100%;
   aspect-ratio: 9 / 16;
   overflow: hidden;
+}
+
+.sheet {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
   background: var(--ink);
   color: var(--paper);
   font-family: var(--font-art);

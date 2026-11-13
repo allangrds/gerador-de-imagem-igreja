@@ -5,16 +5,17 @@ import type {
   FormProps,
   ModelProps,
 } from '../../../components/page-builder/types'
-import { joinParts, longDate, titleSize } from '../format'
+import { joinParts, longDate, titleSize } from '../../../lib/format'
 import type { EventData } from '../types'
 import styles from './Event.module.css'
 import page from './Page.module.css'
+import { Sheet } from './Sheet'
 
 function Preview({ data }: ModelProps<EventData>) {
   const when = joinParts([longDate(data.date), data.time])
 
   return (
-    <div className={page.page}>
+    <Sheet>
       <div className={styles.photo}>
         {data.image && (
           <img className={page.photo} src={data.image.src} alt="" />
@@ -54,7 +55,7 @@ function Preview({ data }: ModelProps<EventData>) {
           <span className={styles.priceValue}>{data.price || 'Gratuito'}</span>
         </div>
       </div>
-    </div>
+    </Sheet>
   )
 }
 

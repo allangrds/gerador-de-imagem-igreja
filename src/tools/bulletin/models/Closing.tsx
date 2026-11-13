@@ -10,13 +10,14 @@ import { CHURCH_NAME } from '../types'
 import type { ClosingData } from '../types'
 import styles from './Closing.module.css'
 import page from './Page.module.css'
+import { Sheet } from './Sheet'
 import { SOCIALS, filledSocials } from './socials'
 
 function Preview({ data }: ModelProps<ClosingData>) {
   const socials = filledSocials(data)
 
   return (
-    <div className={`${page.page} ${page.light}`}>
+    <Sheet className={page.light}>
       <div className={styles.body}>
         <img
           className={styles.logo}
@@ -60,7 +61,7 @@ function Preview({ data }: ModelProps<ClosingData>) {
         <span className={styles.message}>{data.message}</span>
         <span className={styles.invite}>Te esperamos no próximo culto.</span>
       </div>
-    </div>
+    </Sheet>
   )
 }
 

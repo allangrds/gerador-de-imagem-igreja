@@ -15,6 +15,8 @@ export type PageModel<D = PageData> = {
   // Saved on this device and restored the next time the model is added.
   persisted?: boolean
   defaults: () => D
+  // Example content for the model list and the bigger preview; falls back to defaults.
+  sample?: () => D
   summary: (data: D) => string
   Preview: ComponentType<ModelProps<D>>
   Form: ComponentType<FormProps<D>>

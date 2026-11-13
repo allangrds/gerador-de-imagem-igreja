@@ -5,6 +5,7 @@ import { Button, spinnerClassName } from '../Button'
 import { Icon } from '../Icon'
 import { Segmented } from '../Segmented'
 import styles from './PageBuilder.module.css'
+import { PreviewDialog } from './PreviewDialog'
 import type { PageModel } from './types'
 import { usePageList } from './usePageList'
 import type { Page, PageData } from './usePageList'
@@ -63,6 +64,7 @@ export function PageBuilder({
     initial.map((type) => ({ type, data: startingData(byType.get(type)!) }))
   )
   const [chosen, setChosen] = useState(models[0].type)
+  const [previewing, setPreviewing] = useState<PageModel | null>(null)
   const [tab, setTab] = useState<Tab>('pages')
   const [exportState, setExportState] = useState<ExportState>({
     status: 'idle',
@@ -97,13 +99,14 @@ export function PageBuilder({
     }
   }
 
-  function add() {
+  function add(model = chosenModel) {
     dispatch({
       kind: 'add',
-      type: chosen,
-      data: startingData(chosenModel),
+      type: model.type,
+      data: startingData(model),
       max,
     })
+    setChosen(model.type)
     setTab('edit')
   }
 
@@ -157,15 +160,19 @@ export function PageBuilder({
           </div>
           <ul className={styles.modelList}>
             {models.map((model) => (
-              <li key={model.type}>
+              <li key={model.type} className={styles.modelItem}>
                 <button
                   type="button"
                   className={styles.model}
                   aria-pressed={model.type === chosen}
                   onClick={() => setChosen(model.type)}
                 >
-                  <span className={styles.modelThumb} aria-hidden="true">
-                    <model.Preview data={model.defaults()} />
+                  <span
+                    className={styles.modelThumb}
+                    style={{ aspectRatio }}
+                    aria-hidden="true"
+                  >
+                    <model.Preview data={(model.sample ?? model.defaults)()} />
                   </span>
                   <span className={styles.modelText}>
                     <span className={styles.modelName}>
@@ -183,10 +190,19 @@ export function PageBuilder({
                     </span>
                   </span>
                 </button>
+                <button
+                  type="button"
+                  className={styles.previewButton}
+                  aria-label={`Ver preview: ${model.name}`}
+                  onClick={() => setPreviewing(model)}
+                >
+                  <Icon name="eye" size={16} />
+                  <span aria-hidden="true">Ver preview</span>
+                </button>
               </li>
             ))}
           </ul>
-          <Button large block disabled={full} onClick={add}>
+          <Button large block disabled={full} onClick={() => add()}>
             <Icon name="plus" />
             Adicionar “{chosenModel.name}”
           </Button>
@@ -363,6 +379,19 @@ export function PageBuilder({
           )}
         </aside>
       </div>
+
+      {previewing && (
+        <PreviewDialog
+          model={previewing}
+          aspectRatio={aspectRatio}
+          canAdd={!full}
+          onAdd={() => {
+            add(previewing)
+            setPreviewing(null)
+          }}
+          onClose={() => setPreviewing(null)}
+        />
+      )}
 
       <footer className={styles.exportBar}>
         <div className={styles.exportInner}>

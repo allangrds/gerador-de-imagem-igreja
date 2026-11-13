@@ -1,6 +1,6 @@
 import { Text, View } from '@react-pdf/renderer'
 import { pixPayload } from '../models/Offerings'
-import { titleSize } from '../format'
+import { titleSize } from '../../../lib/format'
 import type { OfferingsData } from '../types'
 import { PdfPage, Qr, base, colors, cq, tracking } from './styles'
 

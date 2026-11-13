@@ -4,15 +4,16 @@ import type {
   FormProps,
   ModelProps,
 } from '../../../components/page-builder/types'
-import { titleSize } from '../format'
+import { titleSize } from '../../../lib/format'
 import { CHURCH_NAME } from '../types'
 import type { NoticeData } from '../types'
 import styles from './Notice.module.css'
 import page from './Page.module.css'
+import { Sheet } from './Sheet'
 
 function Preview({ data }: ModelProps<NoticeData>) {
   return (
-    <div className={`${page.page} ${page.light}`}>
+    <Sheet className={page.light}>
       <span className={styles.tag}>
         <svg
           aria-hidden="true"
@@ -42,7 +43,7 @@ function Preview({ data }: ModelProps<NoticeData>) {
         <strong>{data.signature}</strong>
         <span>{CHURCH_NAME}</span>
       </div>
-    </div>
+    </Sheet>
   )
 }
 

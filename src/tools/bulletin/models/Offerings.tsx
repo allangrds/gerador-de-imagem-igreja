@@ -8,12 +8,13 @@ import type {
   FormProps,
   ModelProps,
 } from '../../../components/page-builder/types'
-import { titleSize } from '../format'
+import { titleSize } from '../../../lib/format'
 import { buildPixPayload } from '../pix'
 import { PIX_KEY_TYPES } from '../types'
 import type { OfferingsData } from '../types'
 import styles from './Offerings.module.css'
 import page from './Page.module.css'
+import { Sheet } from './Sheet'
 import { Qr } from './Qr'
 
 // The QR needs every field the PIX standard asks for; without them only the key is shown.
@@ -36,7 +37,7 @@ function Preview({ data }: ModelProps<OfferingsData>) {
   ].filter(([, value]) => value)
 
   return (
-    <div className={`${page.page} ${page.light} ${styles.page}`}>
+    <Sheet className={`${page.light} ${styles.page}`}>
       <div className={styles.heading}>
         <span className={page.kicker}>Fidelidade</span>
         <h1
@@ -83,7 +84,7 @@ function Preview({ data }: ModelProps<OfferingsData>) {
         </dl>
       )}
       <p className={`${page.text} ${styles.note}`}>{data.note}</p>
-    </div>
+    </Sheet>
   )
 }
 

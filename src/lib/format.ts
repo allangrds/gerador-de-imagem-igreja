@@ -60,6 +60,15 @@ export function monthAndYear(date: Date) {
   return `${month.charAt(0).toUpperCase()}${month.slice(1)} · ${date.getFullYear()}`
 }
 
+// 19 and 30 become "19h30"; whole hours stay short, like "19h".
+export function formatTime(hour: string, minute: string) {
+  if (!hour) {
+    return ''
+  }
+
+  return Number(minute) ? `${hour}h${minute.padStart(2, '0')}` : `${hour}h`
+}
+
 export function joinParts(parts: string[]) {
   return parts.filter(Boolean).join(' · ')
 }

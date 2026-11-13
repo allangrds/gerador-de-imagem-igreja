@@ -54,6 +54,33 @@ describe('BulletinEditor', () => {
     ).toBeInTheDocument()
   })
 
+  it('shows a bigger preview of a model before adding it', async () => {
+    const user = userEvent.setup()
+    renderEditor()
+
+    await user.click(
+      screen.getByRole('button', { name: 'Ver preview: Calendário' })
+    )
+    const dialog = screen.getByRole('dialog', { name: 'Calendário' })
+    expect(within(dialog).getByText('Cantata de Natal')).toBeInTheDocument()
+
+    await user.click(
+      within(dialog).getByRole('button', { name: 'Adicionar “Calendário”' })
+    )
+    expect(screen.queryByRole('dialog')).not.toBeInTheDocument()
+    expect(pageNames()[2]).toBe('Editar página 3: Calendário')
+  })
+
+  it('closes the preview with Escape', async () => {
+    const user = userEvent.setup()
+    renderEditor()
+
+    await user.click(screen.getByRole('button', { name: 'Ver preview: Capa' }))
+    await user.keyboard('{Escape}')
+
+    expect(screen.queryByRole('dialog')).not.toBeInTheDocument()
+  })
+
   it('moves and removes pages', async () => {
     const user = userEvent.setup()
     renderEditor()

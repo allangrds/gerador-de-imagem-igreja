@@ -4,16 +4,17 @@ import type {
   FormProps,
   ModelProps,
 } from '../../../components/page-builder/types'
-import { titleSize } from '../format'
+import { titleSize } from '../../../lib/format'
 import type { WhatsappData } from '../types'
 import { ArrowIcon } from './ArrowIcon'
 import page from './Page.module.css'
+import { Sheet } from './Sheet'
 import { Qr } from './Qr'
 import styles from './Whatsapp.module.css'
 
 function Preview({ data }: ModelProps<WhatsappData>) {
   return (
-    <div className={`${page.page} ${styles.page}`}>
+    <Sheet className={styles.page}>
       <span className={styles.icon}>
         <svg
           aria-hidden="true"
@@ -57,7 +58,7 @@ function Preview({ data }: ModelProps<WhatsappData>) {
           </span>
         </div>
       )}
-    </div>
+    </Sheet>
   )
 }
 

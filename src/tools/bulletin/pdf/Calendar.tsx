@@ -1,11 +1,12 @@
 import { Text, View } from '@react-pdf/renderer'
 import {
   dayAndMonth,
+  formatTime,
   joinParts,
   sortByDate,
   titleSize,
   weekday,
-} from '../format'
+} from '../../../lib/format'
 import type { CalendarData } from '../types'
 import { PdfPage, base, colors, cq, tracking } from './styles'
 
@@ -85,7 +86,10 @@ export function CalendarPdf({ data }: { data: CalendarData }) {
                     letterSpacing: tracking(cq(3.3), 0.04),
                   }}
                 >
-                  {joinParts([weekday(event.date), event.time])}
+                  {joinParts([
+                    weekday(event.date),
+                    formatTime(event.hour, event.minute),
+                  ])}
                 </Text>
                 {event.description && (
                   <Text

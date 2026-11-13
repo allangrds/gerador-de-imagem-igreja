@@ -1,6 +1,6 @@
 import { Text, View } from '@react-pdf/renderer'
 import { CHURCH_NAME } from '../types'
-import { titleSize } from '../format'
+import { titleSize } from '../../../lib/format'
 import type { NoticeData } from '../types'
 import { Icon, PdfPage, base, colors, cq, tracking } from './styles'
 
