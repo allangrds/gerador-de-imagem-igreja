@@ -108,7 +108,7 @@ describe('buildMessage', () => {
         '',
         '🕘 [horário do culto]',
         '',
-        '📍 Comunidade Adventista do Belém — Rua Martim Affonso, 152 · Belenzinho, São Paulo',
+        '📍 Rua Martim Affonso, 152 · Belenzinho, São Paulo',
         '',
         'É sua primeira visita? Envie uma mensagem por aqui se precisar de orientações para chegar.',
       ].join('\n')
