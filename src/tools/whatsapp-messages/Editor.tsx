@@ -14,6 +14,7 @@ import type { MessageData, MessageType } from './models'
 
 const STORAGE_KEY = 'whatsapp_messages'
 const COPIED_DURATION = 2400
+const SEARCH_DELAY = 250
 
 type Saved = {
   model: MessageType
@@ -42,6 +43,14 @@ function loadSaved(): State {
   ) as State['data']
 
   return { ...saved, data }
+}
+
+// "Sábado" matches "sabado": no accents, no case.
+function normalize(value: string) {
+  return value
+    .normalize('NFD')
+    .replace(/[\u0300-\u036f]/g, '')
+    .toLowerCase()
 }
 
 function SegmentText({ segment }: { segment: Segment }) {
@@ -73,15 +82,28 @@ export function WhatsappEditor() {
   const [tab, setTab] = useState<Tab>('fields')
   const [plainText, setPlainText] = useState(false)
   const [copy, setCopy] = useState<'idle' | 'copied' | 'error'>('idle')
+  const [query, setQuery] = useState('')
+  const [search, setSearch] = useState('')
 
   const { model: type, emojis, data } = saved
   const model = messageModels.find((item) => item.type === type)!
   const text = buildMessage(type, data[type], emojis)
   const lines = text.split('\n')
+  const found = messageModels.filter((item) =>
+    normalize(`${item.name} ${item.description}`).includes(
+      normalize(search.trim())
+    )
+  )
 
   useEffect(() => {
     setStoredJson(STORAGE_KEY, saved)
   }, [saved])
+
+  useEffect(() => {
+    const timeout = window.setTimeout(() => setSearch(query), SEARCH_DELAY)
+
+    return () => window.clearTimeout(timeout)
+  }, [query])
 
   useEffect(() => {
     if (copy !== 'copied') {
@@ -150,8 +172,18 @@ export function WhatsappEditor() {
             </h2>
             <p className={styles.muted}>Escolha o tipo de mensagem.</p>
           </div>
+          <TextField
+            label="Buscar modelo"
+            type="search"
+            placeholder="Ex.: culto, retiro, aniversário"
+            value={query}
+            onChange={(event) => setQuery(event.target.value)}
+          />
+          {found.length === 0 && (
+            <p className={styles.muted}>Nenhum modelo encontrado.</p>
+          )}
           <ul className={styles.modelList}>
-            {messageModels.map((item) => (
+            {found.map((item) => (
               <li key={item.type}>
                 <button
                   type="button"

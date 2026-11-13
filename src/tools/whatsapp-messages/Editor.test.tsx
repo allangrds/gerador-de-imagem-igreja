@@ -1,4 +1,4 @@
-import { render, screen, within } from '@testing-library/react'
+import { render, screen, waitFor, within } from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
 import { MemoryRouter } from 'react-router'
 import { WhatsappEditor } from './Editor'
@@ -36,6 +36,54 @@ describe('WhatsappEditor', () => {
     expect(screen.getByLabelText('Período')).toBeInTheDocument()
     expect(
       within(bubble()).getByText('Aniversariantes da semana')
+    ).toBeInTheDocument()
+  })
+
+  it('searches the models by name and description, ignoring accents', async () => {
+    const user = userEvent.setup()
+    renderEditor()
+
+    await user.type(screen.getByLabelText('Buscar modelo'), 'sabado')
+
+    // Debounced: the list only changes after the typing stops.
+    expect(
+      screen.getByRole('button', { name: /^Culto de quarta-feira/ })
+    ).toBeInTheDocument()
+    await waitFor(() =>
+      expect(
+        screen.queryByRole('button', { name: /^Culto de quarta-feira/ })
+      ).not.toBeInTheDocument()
+    )
+    expect(
+      screen.getByRole('button', {
+        name: /^Culto de sábado Convite com mensagem/,
+      })
+    ).toBeInTheDocument()
+
+    await user.clear(screen.getByLabelText('Buscar modelo'))
+    await user.type(screen.getByLabelText('Buscar modelo'), 'vida a dois')
+    expect(
+      await screen.findByRole('button', {
+        name: /^Inscrição para retiro de casais/,
+      })
+    ).toBeInTheDocument()
+    await waitFor(() =>
+      expect(
+        screen.queryByRole('button', {
+          name: /^Culto de sábado Convite com mensagem/,
+        })
+      ).not.toBeInTheDocument()
+    )
+  })
+
+  it('says when no model matches the search', async () => {
+    const user = userEvent.setup()
+    renderEditor()
+
+    await user.type(screen.getByLabelText('Buscar modelo'), 'xyzxyz')
+
+    expect(
+      await screen.findByText('Nenhum modelo encontrado.')
     ).toBeInTheDocument()
   })
 
