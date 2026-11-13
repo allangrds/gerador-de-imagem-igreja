@@ -21,8 +21,7 @@ function list(key: string, label: string, placeholder: string) {
   })
 }
 
-const CHURCH_ADDRESS =
-  'Comunidade Adventista do Belém — Rua Martim Affonso, 152 · Belenzinho, São Paulo'
+const CHURCH_ADDRESS = 'Rua Martim Affonso, 152 · Belenzinho, São Paulo'
 
 const church = field(
   'igreja',
