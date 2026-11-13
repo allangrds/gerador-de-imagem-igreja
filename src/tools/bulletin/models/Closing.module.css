@@ -1,0 +1,120 @@
+.body {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  align-items: center;
+  gap: 5cqw;
+  min-height: 0;
+  padding: 16cqw 8cqw 0;
+  text-align: center;
+}
+
+.logo {
+  width: auto;
+  height: 40cqw;
+}
+
+.church {
+  display: flex;
+  flex-direction: column;
+  gap: 1.6cqw;
+}
+
+.name {
+  font-size: 5.2cqw;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.address {
+  color: var(--olive-text);
+  font-size: 3.6cqw;
+  line-height: 1.45;
+  white-space: pre-line;
+}
+
+.rule {
+  width: 14cqw;
+  height: 0.8cqw;
+  background: var(--gold);
+}
+
+.socials {
+  display: flex;
+  justify-content: center;
+  gap: 5cqw;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.social {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2cqw;
+  font-size: 2.8cqw;
+  letter-spacing: 0.08em;
+}
+
+.socialIcon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 15cqw;
+  height: 15cqw;
+  border-radius: 999px;
+  background: var(--ink);
+  color: var(--paper);
+}
+
+.socialIcon svg {
+  width: 7cqw;
+  height: 7cqw;
+}
+
+.farewell {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.6cqw;
+  padding: 9cqw 8cqw;
+  background: var(--ink);
+  text-align: center;
+}
+
+.message {
+  color: var(--gold);
+  font-size: 8cqw;
+  font-weight: 700;
+  line-height: 1;
+  text-transform: uppercase;
+}
+
+.invite {
+  color: var(--muted-on-dark);
+  font-size: 3.4cqw;
+}
+
+/* Form */
+.fieldset {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin: 0;
+  padding: 14px;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+}
+
+.legend {
+  padding: 0 4px;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.hint {
+  color: var(--olive-text);
+  font-size: 13px;
+}

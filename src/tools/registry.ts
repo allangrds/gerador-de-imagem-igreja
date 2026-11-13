@@ -19,12 +19,13 @@ export const tools: Tool[] = [
     path: '/thumbnail-youtube',
   },
   {
-    id: 'instagram-post',
-    name: 'Post para Instagram',
-    description: 'Divulgação de programações e pregadores convidados no feed.',
-    size: '1080 × 1350',
-    status: 'soon',
-    aspectRatio: '4 / 5',
+    id: 'bulletin',
+    name: 'Boletim em PDF',
+    description:
+      'Junte páginas prontas (capa, agenda, eventos, avisos, dízimos e redes) na ordem que quiser e baixe o boletim.',
+    size: 'PDF · 1080 × 1920',
+    status: 'available',
+    path: '/boletim',
   },
   {
     id: 'instagram-story',

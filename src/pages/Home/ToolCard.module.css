@@ -91,3 +91,18 @@
   padding-top: 6px;
   font-weight: 700;
 }
+
+.pages {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  background: #efeae0;
+}
+
+.page {
+  width: 22%;
+  box-shadow: 0 6px 14px -6px rgb(20 18 16 / 50%);
+}

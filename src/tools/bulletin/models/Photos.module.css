@@ -1,0 +1,39 @@
+.mosaic {
+  display: grid;
+  flex-shrink: 0;
+  grid-template-rows: repeat(2, minmax(0, 1fr));
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.4cqw;
+  height: 92cqw;
+}
+
+.tile {
+  overflow: hidden;
+  background: #4a4535;
+}
+
+.tile:first-child {
+  grid-row: span 2;
+  background: #5f5944;
+}
+
+.tile:last-child {
+  background: #2a251e;
+}
+
+.body {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  gap: 5cqw;
+  min-height: 0;
+  padding: 9cqw 8cqw 10cqw;
+}
+
+.title {
+  line-height: 1.02;
+}
+
+.button {
+  margin-top: auto;
+}

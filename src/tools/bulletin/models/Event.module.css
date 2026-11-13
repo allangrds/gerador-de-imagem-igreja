@@ -1,0 +1,79 @@
+.photo {
+  position: relative;
+  flex-shrink: 0;
+  height: 78cqw;
+  overflow: hidden;
+  background: #2a251e;
+}
+
+.fade {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgb(20 18 16 / 0%) 55%, #141210 100%);
+}
+
+.tag {
+  position: absolute;
+  bottom: 4cqw;
+  left: 0;
+  padding: 2.2cqw 6cqw 2.2cqw 8cqw;
+  background: var(--gold);
+  color: var(--ink);
+  font-size: 3.4cqw;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+}
+
+.body {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  gap: 5cqw;
+  min-height: 0;
+  padding: 6cqw 8cqw 8cqw;
+}
+
+.when {
+  display: flex;
+  align-items: center;
+  gap: 3cqw;
+  color: var(--gold);
+  font-size: 4.2cqw;
+}
+
+.when svg {
+  flex-shrink: 0;
+  width: 5.4cqw;
+  height: 5.4cqw;
+}
+
+.price {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 4cqw;
+  margin-top: auto;
+  padding-top: 4.5cqw;
+  border-top: 0.3cqw solid var(--ink-soft);
+}
+
+.priceLabel {
+  color: var(--muted-on-dark);
+  font-size: 3.2cqw;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+}
+
+.priceValue {
+  color: var(--gold);
+  font-size: 7.4cqw;
+  font-weight: 700;
+  text-align: right;
+}
+
+.row {
+  display: grid;
+  grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr);
+  gap: 10px;
+}

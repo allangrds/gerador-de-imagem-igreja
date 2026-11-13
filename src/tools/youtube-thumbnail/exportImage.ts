@@ -1,6 +1,6 @@
 import { slugify } from '../../lib/slugify'
 import background from '../../assets/thumbnail-background.png'
-import { loadImage } from './photo'
+import { loadImage } from '../../lib/image'
 
 export const EXPORT_WIDTH = 1280
 export const EXPORT_HEIGHT = 720

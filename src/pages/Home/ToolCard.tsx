@@ -2,15 +2,14 @@ import { Link } from 'react-router'
 import { Icon } from '../../components/Icon'
 import { Tag } from '../../components/Tag'
 import type { Tool } from '../../tools/registry'
-import { ThumbnailArt } from '../../tools/youtube-thumbnail/ThumbnailArt'
-import { SAMPLE_THUMBNAIL } from '../../tools/youtube-thumbnail/sample'
 import styles from './ToolCard.module.css'
+import { ToolPreview } from './ToolPreview'
 
 export function ToolCard({ tool }: { tool: Tool }) {
   if (tool.status === 'available' && tool.path) {
     return (
       <Link to={tool.path} className={`${styles.card} ${styles.available}`}>
-        <ThumbnailArt {...SAMPLE_THUMBNAIL} />
+        <ToolPreview id={tool.id} />
         <div className={styles.body}>
           <div className={styles.meta}>
             <Tag tone="available">Disponível</Tag>

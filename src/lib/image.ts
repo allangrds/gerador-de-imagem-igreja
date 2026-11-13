@@ -45,3 +45,31 @@ export function fileNameFromUrl(url: string) {
     return url
   }
 }
+
+export function fitWithin(width: number, height: number, max: number) {
+  const scale = Math.min(1, max / Math.max(width, height))
+
+  return {
+    width: Math.round(width * scale),
+    height: Math.round(height * scale),
+  }
+}
+
+// Shrinks uploads so they fit in localStorage and keep the exported files light.
+export async function readImageFile(file: File, max = 1600): Promise<Photo> {
+  const image = await loadImage(await readAsDataUrl(file))
+  const size = fitWithin(image.naturalWidth, image.naturalHeight, max)
+  const canvas = document.createElement('canvas')
+  canvas.width = size.width
+  canvas.height = size.height
+  canvas.getContext('2d')?.drawImage(image, 0, 0, size.width, size.height)
+
+  // PNG keeps transparency (logos); everything else becomes a lighter JPEG.
+  const type = file.type === 'image/png' ? 'image/png' : 'image/jpeg'
+
+  return {
+    src: canvas.toDataURL(type, 0.85),
+    name: file.name,
+    detail: `${formatBytes(file.size)} · ${image.naturalWidth} × ${image.naturalHeight}`,
+  }
+}

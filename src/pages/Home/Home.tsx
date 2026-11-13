@@ -6,6 +6,8 @@ import { SAMPLE_THUMBNAIL } from '../../tools/youtube-thumbnail/sample'
 import styles from './Home.module.css'
 import { ToolCard } from './ToolCard'
 
+const COUNT_WORDS = ['Nenhuma', 'Uma', 'Duas', 'Três', 'Quatro', 'Cinco']
+
 const steps = [
   {
     title: 'Escolha a ferramenta',
@@ -66,11 +68,14 @@ export function Home() {
             <div>
               <h2 className={styles.sectionTitle}>Ferramentas</h2>
               <p className={styles.muted}>
-                Uma pronta para usar hoje, outras a caminho.
+                {COUNT_WORDS[available]}{' '}
+                {available === 1 ? 'pronta' : 'prontas'} para usar hoje, outras
+                a caminho.
               </p>
             </div>
             <span className={styles.count}>
-              {available} disponível · {soon} em breve
+              {available} {available === 1 ? 'disponível' : 'disponíveis'} ·{' '}
+              {soon} em breve
             </span>
           </div>
           <ul className={styles.grid}>

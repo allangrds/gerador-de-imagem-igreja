@@ -5,8 +5,8 @@ import {
   formatBytes,
   loadImage,
   readAsDataUrl,
-} from './photo'
-import type { Photo } from './photo'
+} from '../../lib/image'
+import type { Photo } from '../../lib/image'
 
 export type PhotoSource = 'file' | 'url'
 

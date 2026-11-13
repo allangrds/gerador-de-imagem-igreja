@@ -5,7 +5,7 @@ import { TextField } from '../../components/Field'
 import { Icon } from '../../components/Icon'
 import { Segmented } from '../../components/Segmented'
 import styles from './PhotoInput.module.css'
-import type { Photo } from './photo'
+import type { Photo } from '../../lib/image'
 import type { PhotoSource } from './useThumbnailForm'
 
 type PhotoInputProps = {

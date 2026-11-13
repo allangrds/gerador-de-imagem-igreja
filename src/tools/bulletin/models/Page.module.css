@@ -1,0 +1,81 @@
+/* Sizes are in cqw (1% of the page width) so the preview scales to any width.
+   The PDF in ../pdf uses the same numbers through cq(). */
+.page {
+  container-type: inline-size;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  aspect-ratio: 9 / 16;
+  overflow: hidden;
+  background: var(--ink);
+  color: var(--paper);
+  font-family: var(--font-art);
+  line-height: 1.2;
+}
+
+.light {
+  background: var(--paper);
+  color: var(--ink);
+}
+
+.kicker {
+  color: var(--gold);
+  font-size: 3.2cqw;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+}
+
+.light .kicker {
+  color: var(--olive-text);
+}
+
+.title {
+  margin: 0;
+  font-family: var(--font-art);
+  font-size: 11cqw;
+  font-weight: 700;
+  line-height: 1;
+  text-transform: uppercase;
+  overflow-wrap: anywhere;
+}
+
+.text {
+  margin: 0;
+  color: #e9e3d3;
+  font-size: 4.2cqw;
+  line-height: 1.5;
+  white-space: pre-line;
+}
+
+.light .text {
+  color: #2e2a22;
+}
+
+.button {
+  display: flex;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
+  gap: 3cqw;
+  height: 14cqw;
+  border-radius: 2cqw;
+  background: var(--gold);
+  color: var(--ink);
+  font-size: 4.8cqw;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.button svg {
+  width: 5.4cqw;
+  height: 5.4cqw;
+}
+
+.photo {
+  width: 100%;
+  height: 100%;
+  max-width: none;
+  object-fit: cover;
+}

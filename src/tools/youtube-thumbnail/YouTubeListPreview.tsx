@@ -1,6 +1,6 @@
 import styles from './Editor.module.css'
 import { ThumbnailArt } from './ThumbnailArt'
-import type { Photo } from './photo'
+import type { Photo } from '../../lib/image'
 
 type YouTubeListPreviewProps = {
   title: string

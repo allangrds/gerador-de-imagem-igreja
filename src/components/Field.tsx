@@ -1,5 +1,9 @@
 import { useId } from 'react'
-import type { InputHTMLAttributes, TextareaHTMLAttributes } from 'react'
+import type {
+  InputHTMLAttributes,
+  SelectHTMLAttributes,
+  TextareaHTMLAttributes,
+} from 'react'
 import styles from './Field.module.css'
 import { Icon } from './Icon'
 
@@ -116,6 +120,41 @@ export function TextAreaField({
         length={value.length}
         hintId={hintId}
       />
+    </div>
+  )
+}
+
+type SelectFieldProps = Omit<FieldChrome, 'maxLength' | 'error'> &
+  SelectHTMLAttributes<HTMLSelectElement> & {
+    value: string
+    options: string[]
+  }
+
+export function SelectField({
+  label,
+  hint,
+  options,
+  ...props
+}: SelectFieldProps) {
+  const id = useId()
+  const hintId = `${id}-hint`
+
+  return (
+    <div className={styles.field}>
+      <label htmlFor={id} className={styles.label}>
+        {label}
+      </label>
+      <select
+        id={id}
+        className={styles.control}
+        aria-describedby={hint ? hintId : undefined}
+        {...props}
+      >
+        {options.map((option) => (
+          <option key={option}>{option}</option>
+        ))}
+      </select>
+      <FieldMeta hint={hint} length={0} hintId={hintId} />
     </div>
   )
 }

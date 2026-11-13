@@ -4,5 +4,6 @@ import { afterEach } from 'vitest'
 
 afterEach(() => {
   cleanup()
-  localStorage.clear()
+  // Node-environment tests (like the PDF one) have no localStorage.
+  globalThis.localStorage?.clear()
 })

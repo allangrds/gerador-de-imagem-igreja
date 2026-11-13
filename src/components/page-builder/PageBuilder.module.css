@@ -1,0 +1,354 @@
+/* Mobile first: one panel at a time, picked by the tabs, like an app. */
+.builder {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.pageHead {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: 16px 16px 0;
+}
+
+.breadcrumb {
+  display: flex;
+  gap: 8px;
+  color: var(--olive-text);
+  font-size: 14px;
+}
+
+.pageTitle {
+  font-size: 26px;
+}
+
+.tabs {
+  position: sticky;
+  z-index: 5;
+  top: 0;
+  padding: 8px 16px;
+  background: var(--paper);
+}
+
+.columns {
+  display: grid;
+  gap: 20px;
+  padding: 0 16px;
+}
+
+.panel {
+  display: none;
+  flex-direction: column;
+  gap: 16px;
+  min-width: 0;
+}
+
+.builder[data-tab='models'] .models,
+.builder[data-tab='pages'] .list,
+.builder[data-tab='edit'] .edit {
+  display: flex;
+}
+
+.panelHead {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.panelTitle {
+  font-size: 18px;
+}
+
+.muted {
+  color: var(--olive-text);
+  font-size: 14px;
+}
+
+.note {
+  display: flex;
+  gap: 8px;
+  color: var(--olive-text);
+  font-size: 13px;
+}
+
+.note svg {
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.modelList,
+.pages {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.model,
+.pageButton {
+  display: flex;
+  flex: 1;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+  min-width: 0;
+  min-height: 56px;
+  padding: 8px;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: var(--surface);
+  color: var(--ink);
+  text-align: left;
+  cursor: pointer;
+}
+
+.model:hover,
+.pageButton:hover {
+  border-color: var(--line-strong);
+}
+
+.model[aria-pressed='true'] {
+  border: 2px solid var(--gold-deep);
+  background: var(--gold-tint);
+}
+
+.modelThumb,
+.pageThumb {
+  flex-shrink: 0;
+  width: 40px;
+  overflow: hidden;
+  border-radius: 4px;
+  box-shadow: 0 0 0 1px var(--line);
+  pointer-events: none;
+}
+
+.modelText {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  min-width: 0;
+}
+
+.modelName {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 15px;
+  font-weight: 700;
+}
+
+.saved {
+  color: var(--gold-deep);
+}
+
+.modelDescription,
+.summary {
+  overflow: hidden;
+  color: var(--olive-text);
+  font-size: 13px;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.empty {
+  padding: 24px 16px;
+  border: 1.5px dashed var(--line-strong);
+  border-radius: 12px;
+  color: var(--olive-text);
+  text-align: center;
+}
+
+.page {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.pageRow {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.number {
+  width: 20px;
+  color: var(--olive-text);
+  font-size: 13px;
+  font-weight: 700;
+  text-align: center;
+}
+
+.active .pageButton {
+  border: 2px solid var(--gold-deep);
+}
+
+.pageActions {
+  display: flex;
+}
+
+.iconButton {
+  display: flex;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border: 0;
+  border-radius: var(--radius-control);
+  background: transparent;
+  color: var(--olive-text);
+  cursor: pointer;
+}
+
+.iconButton:disabled {
+  opacity: 0.35;
+  cursor: default;
+}
+
+.iconButton:hover:not(:disabled) {
+  background: var(--gold-tint);
+  color: var(--ink);
+}
+
+.danger:hover:not(:disabled) {
+  color: var(--error);
+}
+
+.preview {
+  display: flex;
+  justify-content: center;
+  padding: 20px 16px;
+  border-radius: var(--radius-panel);
+  background: var(--stage);
+}
+
+.previewFrame {
+  width: min(100%, 300px);
+  box-shadow: 0 24px 48px -24px rgb(0 0 0 / 80%);
+}
+
+.editHead {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.editTitle {
+  font-size: 22px;
+}
+
+.editPreview {
+  align-self: center;
+  width: 140px;
+  box-shadow: 0 12px 24px -12px rgb(20 18 16 / 50%);
+}
+
+.savedNote {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 10px;
+  border-radius: var(--radius-control);
+  background: var(--gold-tint);
+  color: var(--ink-soft);
+  font-size: 13px;
+}
+
+.savedNote button {
+  margin-left: auto;
+  min-height: 32px;
+  padding: 0 8px;
+  border: 0;
+  background: transparent;
+  color: var(--ink);
+  font-size: 13px;
+  font-weight: 700;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.exportBar {
+  position: sticky;
+  z-index: 10;
+  bottom: 0;
+  border-top: 1px solid var(--line);
+  background: var(--surface);
+  box-shadow: 0 -8px 24px -12px rgb(20 18 16 / 25%);
+}
+
+.exportInner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  max-width: var(--editor-width);
+  margin: 0 auto;
+  padding: 12px 16px 20px;
+}
+
+.exportText {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  font-size: 13px;
+}
+
+.exportText span {
+  overflow: hidden;
+  color: var(--olive-text);
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+@media (width >= 1024px) {
+  .builder {
+    gap: 24px;
+  }
+
+  .tabs,
+  .editPreview {
+    display: none;
+  }
+
+  .pageHead {
+    width: 100%;
+    max-width: var(--editor-width);
+    margin: 0 auto;
+    padding: 28px 24px 0;
+  }
+
+  .pageTitle {
+    font-size: 32px;
+  }
+
+  .columns {
+    grid-template-columns: 300px minmax(0, 1fr) 380px;
+    align-items: start;
+    gap: 24px;
+    width: 100%;
+    max-width: var(--editor-width);
+    margin: 0 auto;
+    padding: 0 24px;
+  }
+
+  .builder .panel {
+    display: flex;
+    padding: 20px;
+    border: 1px solid var(--line);
+    border-radius: var(--radius-panel);
+    background: var(--surface);
+  }
+
+  .exportInner {
+    padding: 14px 24px;
+  }
+
+  .exportText {
+    font-size: 14px;
+  }
+}
