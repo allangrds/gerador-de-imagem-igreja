@@ -24,6 +24,14 @@ describe('cover', () => {
       })
     ).not.toBeInTheDocument()
   })
+
+  it('does not write the church name above the title', () => {
+    render(<cover.Preview data={cover.defaults()} />)
+
+    expect(
+      screen.queryByText('Igreja Adventista do Belém SP')
+    ).not.toBeInTheDocument()
+  })
 })
 
 describe('closing', () => {

@@ -11,7 +11,7 @@ import type { CoverData } from '../types'
 import styles from './Cover.module.css'
 import page from './Page.module.css'
 import { Sheet } from './Sheet'
-import { CHURCH_LOGO_ALT, CHURCH_NAME } from '../../../lib/church'
+import { CHURCH_LOGO_ALT } from '../../../lib/church'
 
 function Preview({ data }: ModelProps<CoverData>) {
   return (
@@ -22,7 +22,6 @@ function Preview({ data }: ModelProps<CoverData>) {
         <img className={styles.logo} src={churchLogo} alt={CHURCH_LOGO_ALT} />
       )}
       <div className={styles.heading}>
-        <span className={page.kicker}>{CHURCH_NAME}</span>
         <h1
           className={`${page.title} ${styles.title}`}
           style={{ fontSize: `${titleSize(data.title, 14)}cqw` }}
