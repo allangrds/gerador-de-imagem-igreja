@@ -1,0 +1,49 @@
+<!doctype html>
+<!--
+  Base de um slide 1080x1350. Copie para <id>/vN/slide-NN.html e troque os tokens pelos valores de marca/marca.json.
+  Fonte: use os arquivos de marca/fontes (caminho relativo ../../marca/fontes/) ou o <link> de marca.json > fonte.css (Google Fonts, Fontshare...).
+  Outro formato: <body data-size="1600x900"> e ajuste width/height.
+-->
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap">
+<style>
+:root{
+  --primaria:#0869F5; --texto:#111827; --suave:#5B7291;
+  --fundo:#F8FAFF; --profundo:#E3EEFF;
+  --fonte:'Inter';
+  --margem:80px;
+}
+*{box-sizing:border-box}
+html,body{width:1080px;height:1350px;margin:0;overflow:hidden}
+body{position:relative;font-family:var(--fonte),sans-serif;-webkit-font-smoothing:antialiased;color:var(--texto);
+  background:radial-gradient(900px 700px at 80% 100%,var(--profundo),transparent 70%),var(--fundo)}
+h1,p{margin:0;font-weight:500}
+
+.marca{position:absolute;left:var(--margem);top:66px;display:flex;align-items:center;gap:12px;font-size:34px;letter-spacing:-1.5px;color:var(--primaria)}
+.marca img{width:36px;height:36px}
+
+.titulo{position:absolute;left:var(--margem);right:var(--margem);top:200px;font-size:84px;line-height:1.04;letter-spacing:-3.4px}
+.titulo em{font-style:normal;color:var(--primaria)}
+.apoio{position:absolute;left:var(--margem);right:var(--margem);top:440px;font-size:32px;line-height:1.38;color:var(--suave)}
+
+/* Card de vidro: texto, print ou dado em cima do fundo. */
+.card{position:absolute;border-radius:28px;background:#ffffffcc;border:1px solid #fff;box-shadow:0 30px 70px #0a3c8a1f;overflow:hidden}
+
+/* Asset: grande, encostado na composição, nunca solto no meio. */
+.asset{position:absolute;filter:drop-shadow(0 30px 40px #0a3c8a26)}
+
+/* Progresso discreto, sem número (a plataforma já numera). */
+.progresso{position:absolute;left:var(--margem);bottom:150px;display:flex;gap:8px}
+.progresso i{width:28px;height:4px;border-radius:4px;background:#0000001a}.progresso i.on{background:var(--primaria)}
+</style>
+</head>
+<body>
+  <div class="marca">Sua Marca</div>
+  <h1 class="titulo">Um título que <em>para o scroll</em>.</h1>
+  <p class="apoio">Uma frase de apoio, curta.</p>
+  <!-- <img class="asset" src="../../assets/3d/serie-01/01-objeto.png" style="right:-60px;bottom:-40px;width:620px"> -->
+  <div class="progresso"><i class="on"></i><i></i><i></i><i></i><i></i></div>
+</body>
+</html>

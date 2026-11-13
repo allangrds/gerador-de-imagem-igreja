@@ -1,0 +1,46 @@
+/* Cover and backing sheets share the same artwork slot, including implicit rows. */
+.open-card .artwork{container-type:size;isolation:isolate}
+.open-card .cover,.open-card .sheet{
+ --preview-h:max(1px,min(calc(100cqh - 84px),calc(108cqw - 28px),340px));
+ width:calc(var(--preview-h)*.8)!important;height:var(--preview-h)!important;
+ max-width:none!important;max-height:none;aspect-ratio:4/5;
+ position:absolute;left:50%;top:50%;margin:0;
+}
+.open-card .cover{transform:translate(-50%,-50%) rotate(-3deg)}
+.open-card .cover img{width:100%;height:100%;aspect-ratio:auto;object-fit:contain}
+.open-card .sheet-back{transform:translate(-44%,-57%) rotate(9deg)}
+.open-card .sheet-middle{transform:translate(-47%,-55%) rotate(3deg)}
+.open-card:hover .cover,.open-card:focus-visible .cover,.open-card .cover:hover{transform:translate(-50%,calc(-50% - 5px)) rotate(0)}
+.video-tile .cover{width:calc(var(--preview-h)*.5625)!important;aspect-ratio:9/16}
+.tile-title{min-width:0;text-wrap:balance}
+@media(min-width:1000px) and (min-height:500px){
+ html,body{height:100%;overflow:hidden}
+ .wrap{width:100%;max-width:1440px;height:100dvh;min-height:0;display:flex;flex-direction:column;padding:0 clamp(24px,3.4vw,48px)}
+ .wrap>.topbar{height:clamp(64px,10dvh,96px);flex-shrink:0}
+ .wrap>main{flex:1;min-height:0;display:flex;flex-direction:column}
+ .intro{flex-shrink:0;gap:25px;padding:clamp(10px,2.5dvh,24px) 0 clamp(12px,2.5dvh,24px)}
+ .intro h1{font-size:clamp(30px,3.7vw,48px);margin:10px 0 12px;line-height:1.08}
+ .intro p{font-size:13px;line-height:1.55}
+ .intro .collection{font-size:12px}
+ .gallery-grid{
+  --gallery-gap:clamp(20px,2vw,30px);
+  flex:1;min-height:0;display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(max(210px,calc((100% - 3*var(--gallery-gap))/4)),1fr));
+  grid-template-rows:none;grid-auto-rows:minmax(360px,1fr);
+  gap:var(--gallery-gap);align-items:stretch;
+  overflow-y:auto;overflow-x:clip;overscroll-behavior-y:contain;scrollbar-width:thin;
+ }
+ .tile{display:flex;min-width:0;min-height:0;height:100%}
+ .open-card{display:grid;grid-template-rows:minmax(0,1fr) 70px;min-height:0;width:100%;height:100%}
+ .open-card .artwork{height:100%;min-height:0;aspect-ratio:auto;padding:0;overflow:visible}
+ .open-card .tile-title{display:flex;align-items:flex-start;justify-content:center;font-size:clamp(16px,1.65vw,21px);line-height:1.25;margin:0;padding:8px 3px 0;text-align:center;gap:0}
+ .wrap>footer{flex-shrink:0;margin:12px 0 0;padding:16px 0 20px;font-size:10px;line-height:1.4}
+}
+@media(min-width:1000px) and (max-height:620px){
+ .intro p{font-size:12px}.intro h1{font-size:32px;margin:8px 0}
+ .open-card{grid-template-rows:minmax(0,1fr) 58px}
+ .wrap>.topbar{height:64px}.wrap>footer{margin-top:8px;padding:12px 0}
+}
+@media(max-width:999px){
+ .gallery-grid{gap:24px}.open-card .artwork{overflow:visible}
+}
