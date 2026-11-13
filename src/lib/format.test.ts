@@ -3,6 +3,7 @@ import {
   formatTime,
   joinParts,
   longDate,
+  monthName,
   monthAndYear,
   sortByDate,
   titleSize,
@@ -21,6 +22,10 @@ describe('dates', () => {
 
   it('names the weekday', () => {
     expect(weekday('2026-12-06')).toBe('Domingo')
+  })
+
+  it('names the month', () => {
+    expect(monthName(new Date(2026, 11, 1))).toBe('Dezembro')
   })
 
   it('names the month and year for the cover', () => {

@@ -1,0 +1,55 @@
+/* Sizes are in cqw (1% of the image width), so the preview and the 1080 px JPG match.
+   .page is only the size container: an element cannot use cqw against itself,
+   so padding and gaps go on .sheet inside it. */
+.page {
+  container-type: inline-size;
+  position: relative;
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  overflow: hidden;
+}
+
+.sheet {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  background: var(--ink);
+  color: var(--paper);
+  font-family: var(--font-art);
+  line-height: 1.2;
+}
+
+.light {
+  background: var(--paper);
+  color: var(--ink);
+}
+
+.kicker {
+  color: var(--gold);
+  font-size: 3cqw;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+}
+
+.light .kicker {
+  color: var(--olive-text);
+}
+
+.title {
+  margin: 0;
+  font-family: var(--font-art);
+  font-weight: 700;
+  line-height: 1;
+  text-transform: uppercase;
+  overflow-wrap: anywhere;
+}
+
+.photo {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  max-width: none;
+  object-fit: cover;
+}

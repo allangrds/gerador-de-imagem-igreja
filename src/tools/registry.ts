@@ -28,6 +28,15 @@ export const tools: Tool[] = [
     path: '/boletim',
   },
   {
+    id: 'instagram-agenda',
+    name: 'Agenda para Instagram',
+    description:
+      'Carrossel com capa, imagens de datas e imagem final. Baixe todas as imagens de uma vez.',
+    size: '.zip · JPG 4:5',
+    status: 'available',
+    path: '/agenda-instagram',
+  },
+  {
     id: 'instagram-story',
     name: 'Story de avisos',
     description: 'Avisos da semana e convites no formato vertical dos stories.',

@@ -1,0 +1,57 @@
+.shade {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgb(20 18 16 / 20%) 0%,
+    rgb(20 18 16 / 25%) 35%,
+    rgb(20 18 16 / 92%) 78%,
+    #141210 100%
+  );
+}
+
+.heading {
+  position: absolute;
+  right: 8cqw;
+  bottom: 30cqw;
+  left: 8cqw;
+  display: flex;
+  flex-direction: column;
+  gap: 3.5cqw;
+}
+
+.title {
+  line-height: 0.95;
+}
+
+.subtitle {
+  position: absolute;
+  bottom: 12cqw;
+  left: 0;
+  margin: 0;
+  padding: 2.8cqw 6cqw 2.8cqw 8cqw;
+  background: var(--gold);
+  color: var(--ink);
+  font-size: 4.4cqw;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.swipe {
+  position: absolute;
+  right: 8cqw;
+  bottom: 13.4cqw;
+  display: flex;
+  align-items: center;
+  gap: 1.6cqw;
+  color: #e9e3d3;
+  font-size: 3cqw;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.swipe svg {
+  width: 4.4cqw;
+  height: 4.4cqw;
+}

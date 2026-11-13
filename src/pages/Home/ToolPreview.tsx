@@ -1,5 +1,6 @@
 import type { PageModel } from '../../components/page-builder/types'
 import { bulletinModels } from '../../tools/bulletin/models'
+import { agendaModels } from '../../tools/instagram-agenda/models'
 import { ThumbnailArt } from '../../tools/youtube-thumbnail/ThumbnailArt'
 import { SAMPLE_THUMBNAIL } from '../../tools/youtube-thumbnail/sample'
 import styles from './ToolCard.module.css'
@@ -27,6 +28,15 @@ function PagesPreview({
 }
 
 export function ToolPreview({ id }: { id: string }) {
+  if (id === 'instagram-agenda') {
+    return (
+      <PagesPreview
+        models={agendaModels}
+        types={['cover', 'dates', 'closing']}
+      />
+    )
+  }
+
   return id === 'bulletin' ? (
     <PagesPreview
       models={bulletinModels}

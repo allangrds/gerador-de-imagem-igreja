@@ -1,0 +1,82 @@
+.body {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  align-items: center;
+  gap: 4cqw;
+  min-height: 0;
+  padding: 11cqw 8cqw 0;
+  text-align: center;
+}
+
+.logo {
+  width: auto;
+  height: 30cqw;
+}
+
+.church {
+  display: flex;
+  flex-direction: column;
+  gap: 1.4cqw;
+}
+
+.name {
+  font-size: 5cqw;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.address {
+  color: var(--olive-text);
+  font-size: 3.4cqw;
+  line-height: 1.45;
+  white-space: pre-line;
+}
+
+.rule {
+  width: 14cqw;
+  height: 0.8cqw;
+  background: var(--gold);
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+  gap: 6cqw;
+  font-size: 3.4cqw;
+}
+
+.action {
+  display: flex;
+  align-items: center;
+  gap: 1.8cqw;
+}
+
+.action svg {
+  width: 5cqw;
+  height: 5cqw;
+}
+
+.farewell {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.6cqw;
+  padding: 7cqw 8cqw;
+  background: var(--ink);
+  text-align: center;
+}
+
+.message {
+  color: var(--gold);
+  font-size: 8cqw;
+  font-weight: 700;
+  line-height: 1;
+  text-transform: uppercase;
+}
+
+.profile {
+  color: var(--muted-on-dark);
+  font-size: 3.4cqw;
+}

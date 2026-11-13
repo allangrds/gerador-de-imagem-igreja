@@ -6,11 +6,11 @@ import type {
   ModelProps,
 } from '../../../components/page-builder/types'
 import { monthAndYear, titleSize } from '../../../lib/format'
-import { CHURCH_NAME } from '../types'
 import type { CoverData } from '../types'
 import styles from './Cover.module.css'
 import page from './Page.module.css'
 import { Sheet } from './Sheet'
+import { CHURCH_NAME } from '../../../lib/church'
 
 function Preview({ data }: ModelProps<CoverData>) {
   return (

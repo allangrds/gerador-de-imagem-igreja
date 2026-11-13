@@ -72,7 +72,6 @@ export type ClosingData = {
   site: string
 }
 
-export const CHURCH_NAME = 'Comunidade Adventista do Belém'
 export const CALENDAR_LIMIT = 4
 export const PHOTOS_LIMIT = 3
 export const PIX_KEY_TYPES = ['CNPJ', 'CPF', 'E-mail', 'Telefone', 'Aleatória']

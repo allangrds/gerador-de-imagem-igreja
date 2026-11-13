@@ -10,6 +10,7 @@ Ferramentas para a equipe de mídia da Comunidade Adventista do Belém criar as 
 
 - **Thumbnail para YouTube** (`/thumbnail-youtube`): título da mensagem, nome do pregador e foto, com prévia ao vivo e download em JPG 1280 × 720.
 - **Boletim em PDF** (`/boletim`): páginas prontas (capa, calendário, evento, imagem, comunicado, fotos, dízimos com PIX copia e cola, grupo do WhatsApp e página final), na ordem que você escolher. O PDF tem texto selecionável e links clicáveis. Capa, WhatsApp e página final ficam salvos no aparelho.
+- **Agenda para Instagram** (`/agenda-instagram`): carrossel 4:5 com capa, imagens de datas (até 4 eventos cada) e imagem final, baixado como um `.zip` de JPGs 1080 × 1350 numerados na ordem.
 
 Novas ferramentas entram em `src/tools/registry.ts` e ganham uma rota em `src/App.tsx`.
 

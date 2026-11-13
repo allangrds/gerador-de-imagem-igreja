@@ -4,7 +4,6 @@ import type {
   Page,
   PageData,
 } from '../../../components/page-builder/usePageList'
-import { CHURCH_NAME } from '../types'
 import { gillSans, gillSansBold } from './assets'
 import { CalendarPdf } from './Calendar'
 import { ClosingPdf } from './Closing'
@@ -15,6 +14,7 @@ import { NoticePdf } from './Notice'
 import { OfferingsPdf } from './Offerings'
 import { PhotosPdf } from './Photos'
 import { WhatsappPdf } from './Whatsapp'
+import { CHURCH_NAME } from '../../../lib/church'
 
 // Same idea as defineModel: each page keeps its own data type inside the map.
 const anyData = <D,>(component: ComponentType<{ data: D }>) =>

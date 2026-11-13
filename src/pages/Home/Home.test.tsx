@@ -16,10 +16,13 @@ describe('Home', () => {
     expect(
       screen.getByRole('link', { name: /Boletim em PDF/ })
     ).toHaveAttribute('href', '/boletim')
-    expect(screen.getAllByText('Em breve')).toHaveLength(1)
-    expect(screen.getByText('2 disponíveis · 1 em breve')).toBeInTheDocument()
     expect(
-      screen.getByText('Duas prontas para usar hoje, outras a caminho.')
+      screen.getByRole('link', { name: /Agenda para Instagram/ })
+    ).toHaveAttribute('href', '/agenda-instagram')
+    expect(screen.getAllByText('Em breve')).toHaveLength(1)
+    expect(screen.getByText('3 disponíveis · 1 em breve')).toBeInTheDocument()
+    expect(
+      screen.getByText('Três prontas para usar hoje, outras a caminho.')
     ).toBeInTheDocument()
   })
 })

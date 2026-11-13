@@ -6,12 +6,12 @@ import type {
   FormProps,
   ModelProps,
 } from '../../../components/page-builder/types'
-import { CHURCH_NAME } from '../types'
 import type { ClosingData } from '../types'
 import styles from './Closing.module.css'
 import page from './Page.module.css'
 import { Sheet } from './Sheet'
 import { SOCIALS, filledSocials } from './socials'
+import { CHURCH_NAME } from '../../../lib/church'
 
 function Preview({ data }: ModelProps<ClosingData>) {
   const socials = filledSocials(data)

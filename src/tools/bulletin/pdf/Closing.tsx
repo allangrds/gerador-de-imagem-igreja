@@ -1,9 +1,9 @@
 import { Image, Text, View } from '@react-pdf/renderer'
 import { filledSocials } from '../models/socials'
-import { CHURCH_NAME } from '../types'
 import type { ClosingData } from '../types'
 import { churchLogo } from './assets'
 import { Icon, MaybeLink, PdfPage, base, colors, cq, tracking } from './styles'
+import { CHURCH_NAME } from '../../../lib/church'
 
 export function ClosingPdf({ data }: { data: ClosingData }) {
   const socials = filledSocials(data)

@@ -1,8 +1,8 @@
 import { Text, View } from '@react-pdf/renderer'
-import { CHURCH_NAME } from '../types'
 import { titleSize } from '../../../lib/format'
 import type { NoticeData } from '../types'
 import { Icon, PdfPage, base, colors, cq, tracking } from './styles'
+import { CHURCH_NAME } from '../../../lib/church'
 
 const MEGAPHONE =
   'M3 11v2a1 1 0 0 0 1 1h3l6 4V6L7 10H4a1 1 0 0 0-1 1z M17 9a4 4 0 0 1 0 6'

@@ -5,11 +5,11 @@ import type {
   ModelProps,
 } from '../../../components/page-builder/types'
 import { titleSize } from '../../../lib/format'
-import { CHURCH_NAME } from '../types'
 import type { NoticeData } from '../types'
 import styles from './Notice.module.css'
 import page from './Page.module.css'
 import { Sheet } from './Sheet'
+import { CHURCH_NAME } from '../../../lib/church'
 
 function Preview({ data }: ModelProps<NoticeData>) {
   return (

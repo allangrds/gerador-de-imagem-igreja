@@ -54,10 +54,14 @@ export function dayAndMonth(value: string) {
     : { day: '', month: '' }
 }
 
-export function monthAndYear(date: Date) {
+export function monthName(date: Date) {
   const month = MONTHS[date.getMonth()]
 
-  return `${month.charAt(0).toUpperCase()}${month.slice(1)} · ${date.getFullYear()}`
+  return `${month.charAt(0).toUpperCase()}${month.slice(1)}`
+}
+
+export function monthAndYear(date: Date) {
+  return `${monthName(date)} · ${date.getFullYear()}`
 }
 
 // 19 and 30 become "19h30"; whole hours stay short, like "19h".
