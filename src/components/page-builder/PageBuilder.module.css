@@ -387,6 +387,16 @@
     background: var(--surface);
   }
 
+  /* Scroll inside the list instead of stretching the page.
+     The padding/margin pair keeps focus rings from being clipped. */
+  .modelList {
+    max-height: 60dvh;
+    margin: -4px;
+    padding: 4px;
+    overflow-y: auto;
+    overscroll-behavior: contain;
+  }
+
   .exportInner {
     padding: 14px 24px;
   }
