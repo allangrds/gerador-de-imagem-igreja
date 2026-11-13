@@ -8,66 +8,14 @@ import type {
   FormProps,
   ModelProps,
 } from '../../../components/page-builder/types'
-import {
-  dayAndMonth,
-  formatTime,
-  joinParts,
-  monthName,
-  sortByDate,
-  titleSize,
-  weekday,
-} from '../../../lib/format'
+import { joinParts, monthName } from '../../../lib/format'
+import { ArtCanvas } from '../art/ArtCanvas'
 import { DATES_LIMIT } from '../types'
 import type { DatesData } from '../types'
 import styles from './Dates.module.css'
-import page from './Page.module.css'
-import { Sheet } from './Sheet'
 
 function Preview({ data }: ModelProps<DatesData>) {
-  return (
-    <Sheet className={`${page.light} ${styles.page}`}>
-      <div className={styles.heading}>
-        <div className={styles.headingText}>
-          <span className={page.kicker}>Agenda</span>
-          <h1
-            className={page.title}
-            style={{ fontSize: `${titleSize(data.title, 10, 64)}cqw` }}
-          >
-            {data.title}
-          </h1>
-        </div>
-        <span className={styles.rule} />
-      </div>
-      <ul className={styles.events}>
-        {sortByDate(data.events).map((event, index) => {
-          const { day, month } = dayAndMonth(event.date)
-
-          return (
-            <li key={index} className={styles.event}>
-              <span className={styles.date}>
-                <span className={styles.day}>{day}</span>
-                <span className={styles.month}>{month}</span>
-              </span>
-              <span className={styles.info}>
-                <span className={styles.name}>{event.name}</span>
-                <span className={styles.when}>
-                  {joinParts([
-                    weekday(event.date),
-                    formatTime(event.hour, event.minute),
-                  ])}
-                </span>
-                {event.description && (
-                  <span className={styles.description}>
-                    {event.description}
-                  </span>
-                )}
-              </span>
-            </li>
-          )
-        })}
-      </ul>
-    </Sheet>
-  )
+  return <ArtCanvas type="dates" data={data} />
 }
 
 function Form({ data, onChange }: FormProps<DatesData>) {

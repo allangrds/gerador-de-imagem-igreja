@@ -1,10 +1,12 @@
 import { unzipSync } from 'fflate'
-import { domToJpeg } from 'modern-screenshot'
+import { loadArt } from './art'
 import { agendaModels } from './models'
 import { renderAgendaZip } from './exportZip'
 
-vi.mock('modern-screenshot', () => ({
-  domToJpeg: vi.fn().mockResolvedValue(`data:image/jpeg;base64,${btoa('jpg')}`),
+const paint = vi.fn()
+
+vi.mock('./art', () => ({
+  loadArt: vi.fn(async () => paint),
 }))
 
 function pageOf(id: number, type: string) {
@@ -21,6 +23,13 @@ function readBlob(blob: Blob) {
     reader.readAsArrayBuffer(blob)
   })
 }
+
+beforeEach(() => {
+  // jsdom has no canvas, so the JPG is a stand-in.
+  HTMLCanvasElement.prototype.toBlob = function (callback, type) {
+    callback(new Blob(['jpg'], { type }))
+  }
+})
 
 describe('renderAgendaZip', () => {
   it('saves one numbered JPG per image, in the carousel order', async () => {
@@ -41,18 +50,11 @@ describe('renderAgendaZip', () => {
     expect(new TextDecoder().decode(files['01-capa.jpg'])).toBe('jpg')
   })
 
-  it('captures each image at 1080 × 1350', async () => {
-    await renderAgendaZip([pageOf(1, 'cover')])
+  it('draws each image with its own art and data, 1080 px wide', async () => {
+    const cover = pageOf(1, 'cover')
+    await renderAgendaZip([cover])
 
-    expect(domToJpeg).toHaveBeenCalledWith(
-      expect.any(HTMLElement),
-      expect.objectContaining({ width: 1080, height: 1350 })
-    )
-  })
-
-  it('cleans up the hidden render area', async () => {
-    await renderAgendaZip([pageOf(1, 'cover')])
-
-    expect(document.body.children).toHaveLength(0)
+    expect(loadArt).toHaveBeenCalledWith('cover', cover.data)
+    expect(paint).toHaveBeenCalledWith(expect.any(HTMLCanvasElement), 1080)
   })
 })

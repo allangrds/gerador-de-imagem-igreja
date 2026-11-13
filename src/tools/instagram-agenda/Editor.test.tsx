@@ -58,7 +58,10 @@ describe('AgendaEditor', () => {
     await user.clear(title)
     await user.type(title, 'Agenda de dezembro')
 
-    expect(screen.getAllByText('Agenda de dezembro').length).toBeGreaterThan(0)
+    expect(
+      screen.getAllByRole('img', { name: /Agenda de dezembro/, hidden: true })
+        .length
+    ).toBeGreaterThan(0)
   })
 
   it('downloads the .zip with the images in order', async () => {

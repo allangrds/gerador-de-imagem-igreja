@@ -5,45 +5,12 @@ import type {
   FormProps,
   ModelProps,
 } from '../../../components/page-builder/types'
-import { monthName, titleSize } from '../../../lib/format'
+import { monthName } from '../../../lib/format'
+import { ArtCanvas } from '../art/ArtCanvas'
 import type { AgendaCoverData } from '../types'
-import styles from './Cover.module.css'
-import page from './Page.module.css'
-import { Sheet } from './Sheet'
-import { CHURCH_NAME } from '../../../lib/church'
 
 function Preview({ data }: ModelProps<AgendaCoverData>) {
-  return (
-    <Sheet>
-      {data.image && <img className={page.photo} src={data.image.src} alt="" />}
-      <div className={styles.shade} />
-      <div className={styles.heading}>
-        <span className={page.kicker}>{CHURCH_NAME}</span>
-        <h1
-          className={`${page.title} ${styles.title}`}
-          style={{ fontSize: `${titleSize(data.title, 17)}cqw` }}
-        >
-          {data.title}
-        </h1>
-      </div>
-      {data.subtitle && <p className={styles.subtitle}>{data.subtitle}</p>}
-      <span className={styles.swipe}>
-        Arraste
-        <svg
-          aria-hidden="true"
-          viewBox="0 0 24 24"
-          fill="none"
-          stroke="currentColor"
-          strokeWidth="2"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-        >
-          <path d="M5 12h14" />
-          <path d="M13 6l6 6-6 6" />
-        </svg>
-      </span>
-    </Sheet>
-  )
+  return <ArtCanvas type="cover" data={data} />
 }
 
 function Form({ data, onChange }: FormProps<AgendaCoverData>) {

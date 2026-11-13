@@ -1,64 +1,45 @@
-import { createElement } from 'react'
-import { flushSync } from 'react-dom'
-import { createRoot } from 'react-dom/client'
 import type { Page } from '../../components/page-builder/usePageList'
 import { slugify } from '../../lib/slugify'
+import { loadArt } from './art'
+import { ART_WIDTH } from './art/canvas'
 import { agendaModels } from './models'
 
-const IMAGE_WIDTH = 1080
-const IMAGE_HEIGHT = 1350
-
-function dataUrlToBytes(dataUrl: string) {
-  const binary = atob(dataUrl.slice(dataUrl.indexOf(',') + 1))
-
-  return Uint8Array.from(binary, (char) => char.charCodeAt(0))
-}
-
-// Photos and the Gill Sans must be ready, or the capture comes out without them.
-async function settle(node: HTMLElement) {
-  await Promise.all(
-    [...node.querySelectorAll('img')].map((image) =>
-      image.decode?.().catch(() => undefined)
+function toJpeg(canvas: HTMLCanvasElement) {
+  return new Promise<Blob>((resolve, reject) =>
+    canvas.toBlob(
+      (blob) =>
+        blob ? resolve(blob) : reject(new Error('Could not create the JPG')),
+      'image/jpeg',
+      0.92
     )
   )
-  await document.fonts?.ready
 }
 
-// Draws each image with the same component as the preview, at 1080 px wide, off screen.
+// jsdom's Blob has no arrayBuffer(), so read it the old way.
+function readBytes(blob: Blob) {
+  return new Promise<Uint8Array>((resolve, reject) => {
+    const reader = new FileReader()
+    reader.onload = () => resolve(new Uint8Array(reader.result as ArrayBuffer))
+    reader.onerror = () => reject(reader.error)
+    reader.readAsArrayBuffer(blob)
+  })
+}
+
+// Draws each image with the same canvas art as the preview, at 1080 px wide.
 export async function renderAgendaZip(pages: Page[]) {
-  const [{ domToJpeg }, { zipSync }] = await Promise.all([
-    import('modern-screenshot'),
-    import('fflate'),
-  ])
-  const area = document.createElement('div')
-  area.setAttribute('aria-hidden', 'true')
-  area.style.cssText = `position: fixed; top: 0; left: -${IMAGE_WIDTH * 2}px; width: ${IMAGE_WIDTH}px; pointer-events: none;`
-  document.body.append(area)
-  const root = createRoot(area)
+  const { zipSync } = await import('fflate')
   const files: Record<string, Uint8Array> = {}
 
-  try {
-    for (const [index, page] of pages.entries()) {
-      const model = agendaModels.find((item) => item.type === page.type)!
+  for (const [index, page] of pages.entries()) {
+    const model = agendaModels.find((item) => item.type === page.type)!
+    const paint = await loadArt(page.type, page.data)
+    const canvas = document.createElement('canvas')
+    paint(canvas, ART_WIDTH)
 
-      flushSync(() =>
-        root.render(createElement(model.Preview, { data: page.data }))
-      )
-      const node = area.firstElementChild as HTMLElement
-      await settle(node)
-
-      const jpeg = await domToJpeg(node, {
-        width: IMAGE_WIDTH,
-        height: IMAGE_HEIGHT,
-        scale: 1,
-        quality: 0.92,
-      })
-      const number = String(index + 1).padStart(2, '0')
-      files[`${number}-${slugify(model.name)}.jpg`] = dataUrlToBytes(jpeg)
-    }
-  } finally {
-    root.unmount()
-    area.remove()
+    const number = String(index + 1).padStart(2, '0')
+    files[`${number}-${slugify(model.name)}.jpg`] = await readBytes(
+      await toJpeg(canvas)
+    )
   }
 
   // The JPGs are already compressed, so they go into the zip as they are.
