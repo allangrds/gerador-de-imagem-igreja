@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 import { Link } from 'react-router'
-import logo from '../../assets/comunidade-belem.png'
+import logo from '../../assets/logo-iasd-belem-simbolo.png'
 import { TextAreaField, TextField } from '../../components/Field'
 import { Icon } from '../../components/Icon'
 import { Segmented } from '../../components/Segmented'

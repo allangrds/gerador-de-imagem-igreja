@@ -8,7 +8,7 @@ export function Header() {
     <header className={styles.header}>
       <div className={styles.inner}>
         <Link to="/" className={styles.brand}>
-          <Logo alt="Comunidade Adventista do Belém" />
+          <Logo alt="Igreja Adventista do Sétimo Dia – Belém" />
           <span className={styles.name}>
             <span className={styles.title}>Gerador para IASD Belém</span>
             <span className={styles.subtitle}>

@@ -1,15 +1,11 @@
-.tile {
-  display: flex;
+.logo {
   flex-shrink: 0;
-  align-items: center;
-  justify-content: center;
-  width: 56px;
-  height: 44px;
-  background: var(--paper);
-  border-radius: var(--radius-control);
+  width: auto;
+  height: 32px;
 }
 
-.tile img {
-  width: auto;
-  height: 34px;
+@media (width >= 640px) {
+  .logo {
+    height: 40px;
+  }
 }

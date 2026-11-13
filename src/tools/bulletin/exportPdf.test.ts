@@ -7,7 +7,7 @@ import { renderBulletinPdf } from './exportPdf'
 vi.mock('./pdf/assets', () => ({
   gillSans: resolve('src/assets/fonts/GillSans.ttf'),
   gillSansBold: resolve('src/assets/fonts/GillSans-Bold.ttf'),
-  churchLogo: resolve('src/assets/comunidade-belem.png'),
+  churchLogo: resolve('src/assets/logo-iasd-belem-vertical-preto.png'),
 }))
 
 function pageOf(type: string, patch = {}) {
@@ -24,7 +24,7 @@ describe('renderBulletinPdf', () => {
       pageOf('event'),
       pageOf('image', {
         image: {
-          src: resolve('src/assets/comunidade-belem.png'),
+          src: resolve('src/assets/logo-iasd-belem-vertical-preto.png'),
           name: '',
           detail: '',
         },

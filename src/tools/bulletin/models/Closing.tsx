@@ -1,4 +1,4 @@
-import defaultLogo from '../../../assets/comunidade-belem.png'
+import defaultLogo from '../../../assets/logo-iasd-belem-vertical-preto.png'
 import { TextAreaField, TextField } from '../../../components/Field'
 import { ImageField } from '../../../components/page-builder/ImageField'
 import { defineModel } from '../../../components/page-builder/types'

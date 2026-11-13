@@ -1,4 +1,4 @@
-import churchLogo from '../../../assets/comunidade-belem.png'
+import churchLogo from '../../../assets/logo-iasd-belem-vertical-preto.png'
 import gillSansBold from '../../../assets/fonts/GillSans-Bold.ttf'
 import gillSans from '../../../assets/fonts/GillSans.ttf'
 
