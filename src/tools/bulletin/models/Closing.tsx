@@ -11,7 +11,7 @@ import styles from './Closing.module.css'
 import page from './Page.module.css'
 import { Sheet } from './Sheet'
 import { SOCIALS, filledSocials } from './socials'
-import { CHURCH_NAME } from '../../../lib/church'
+import { CHURCH_LOGO_ALT } from '../../../lib/church'
 
 function Preview({ data }: ModelProps<ClosingData>) {
   const socials = filledSocials(data)
@@ -22,45 +22,35 @@ function Preview({ data }: ModelProps<ClosingData>) {
         <img
           className={styles.logo}
           src={data.logo?.src ?? defaultLogo}
-          alt=""
+          alt={CHURCH_LOGO_ALT}
         />
-        <div className={styles.church}>
-          <span className={styles.name}>{CHURCH_NAME}</span>
-          {data.address && (
-            <span className={styles.address}>{data.address}</span>
-          )}
-        </div>
         {socials.length > 0 && (
-          <>
-            <span className={styles.rule} />
-            <span className={page.kicker}>Siga a igreja</span>
-            <ul className={styles.socials}>
-              {socials.map((social) => (
-                <li key={social.key} className={styles.social}>
-                  <span className={styles.socialIcon}>
-                    <svg
-                      aria-hidden="true"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      strokeWidth="1.8"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                    >
-                      <path d={social.icon} />
-                    </svg>
-                  </span>
-                  {social.name}
-                </li>
-              ))}
-            </ul>
-          </>
+          <ul className={styles.socials}>
+            {socials.map((social) => (
+              <li key={social.key}>
+                <svg
+                  role="img"
+                  aria-label={social.name}
+                  className={styles.socialIcon}
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="1.8"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                >
+                  <path d={social.icon} />
+                </svg>
+              </li>
+            ))}
+          </ul>
         )}
       </div>
-      <div className={styles.farewell}>
-        <span className={styles.message}>{data.message}</span>
-        <span className={styles.invite}>Te esperamos no próximo culto.</span>
-      </div>
+      {data.address && (
+        <div className={styles.footer}>
+          <span className={styles.address}>{data.address}</span>
+        </div>
+      )}
     </Sheet>
   )
 }
@@ -74,14 +64,9 @@ function Form({ data, onChange }: FormProps<ClosingData>) {
         value={data.logo}
         onChange={(logo) => onChange({ logo })}
       />
-      <TextField
-        label="Mensagem de despedida"
-        value={data.message}
-        maxLength={30}
-        onChange={(event) => onChange({ message: event.target.value })}
-      />
       <TextAreaField
         label="Endereço"
+        hint="Aparece no rodapé."
         rows={2}
         value={data.address}
         onChange={(event) => onChange({ address: event.target.value })}
@@ -114,14 +99,13 @@ export const closing = defineModel<ClosingData>({
   persisted: true,
   defaults: () => ({
     logo: null,
-    message: 'Feliz sábado!',
     address: 'Rua Martim Affonso, 152 · Belenzinho\nSão Paulo – SP',
-    instagram: '',
-    youtube: '',
+    instagram: 'https://www.instagram.com/adventistas_belemsp/',
+    youtube: 'https://www.youtube.com/@iasdbelemsp',
     facebook: '',
     site: '',
   }),
-  summary: (data) => data.message,
+  summary: (data) => data.address.split('\n')[0],
   Preview,
   Form,
 })

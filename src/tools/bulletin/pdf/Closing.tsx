@@ -2,8 +2,7 @@ import { Image, Text, View } from '@react-pdf/renderer'
 import { filledSocials } from '../models/socials'
 import type { ClosingData } from '../types'
 import { churchLogo } from './assets'
-import { Icon, MaybeLink, PdfPage, base, colors, cq, tracking } from './styles'
-import { CHURCH_NAME } from '../../../lib/church'
+import { Icon, MaybeLink, PdfPage, base, colors, cq } from './styles'
 
 export function ClosingPdf({ data }: { data: ClosingData }) {
   const socials = filledSocials(data)
@@ -14,120 +13,51 @@ export function ClosingPdf({ data }: { data: ClosingData }) {
         style={{
           flex: 1,
           alignItems: 'center',
-          gap: cq(5),
-          paddingTop: cq(16),
-          paddingHorizontal: cq(8),
-          textAlign: 'center',
+          justifyContent: 'center',
+          gap: cq(10),
+          padding: cq(8),
         }}
       >
         <Image
           src={data.logo?.src ?? churchLogo}
           style={{ width: cq(84), height: cq(40), objectFit: 'contain' }}
         />
-        <View style={{ alignItems: 'center', gap: cq(1.6) }}>
-          <Text
+        {socials.length > 0 && (
+          <View
             style={{
-              fontSize: cq(5.2),
-              fontWeight: 700,
-              lineHeight: 1.2,
-              letterSpacing: tracking(cq(5.2), 0.06),
-              textTransform: 'uppercase',
+              flexDirection: 'row',
+              justifyContent: 'center',
+              gap: cq(8),
             }}
           >
-            {CHURCH_NAME}
-          </Text>
-          {data.address && (
-            <Text
-              style={{
-                color: colors.oliveText,
-                fontSize: cq(3.6),
-                lineHeight: 1.45,
-              }}
-            >
-              {data.address}
-            </Text>
-          )}
-        </View>
-        {socials.length > 0 && (
-          <>
-            <View
-              style={{
-                width: cq(14),
-                height: cq(0.8),
-                backgroundColor: colors.gold,
-              }}
-            />
-            <Text style={[base.kicker, { color: colors.oliveText }]}>
-              Siga a igreja
-            </Text>
-            <View
-              style={{
-                flexDirection: 'row',
-                justifyContent: 'center',
-                gap: cq(5),
-              }}
-            >
-              {socials.map((social) => (
-                <MaybeLink
-                  key={social.key}
-                  href={data[social.key]}
-                  style={{
-                    alignItems: 'center',
-                    gap: cq(2),
-                    color: colors.ink,
-                    textDecoration: 'none',
-                  }}
-                >
-                  <View
-                    style={{
-                      alignItems: 'center',
-                      justifyContent: 'center',
-                      width: cq(15),
-                      height: cq(15),
-                      borderRadius: cq(7.5),
-                      backgroundColor: colors.ink,
-                    }}
-                  >
-                    <Icon d={social.icon} size={cq(7)} color={colors.paper} />
-                  </View>
-                  <Text
-                    style={{
-                      fontSize: cq(2.8),
-                      letterSpacing: tracking(cq(2.8), 0.08),
-                    }}
-                  >
-                    {social.name}
-                  </Text>
-                </MaybeLink>
-              ))}
-            </View>
-          </>
+            {socials.map((social) => (
+              <MaybeLink key={social.key} href={data[social.key]} style={{}}>
+                <Icon d={social.icon} size={cq(9)} color={colors.ink} />
+              </MaybeLink>
+            ))}
+          </View>
         )}
       </View>
-      <View
-        style={{
-          alignItems: 'center',
-          gap: cq(1.6),
-          paddingVertical: cq(9),
-          paddingHorizontal: cq(8),
-          backgroundColor: colors.ink,
-        }}
-      >
-        <Text
+      {data.address && (
+        <View
           style={{
-            color: colors.gold,
-            fontSize: cq(8),
-            fontWeight: 700,
-            lineHeight: 1,
-            textTransform: 'uppercase',
+            alignItems: 'center',
+            padding: cq(8),
+            backgroundColor: colors.ink,
           }}
         >
-          {data.message}
-        </Text>
-        <Text style={{ color: colors.mutedOnDark, fontSize: cq(3.4) }}>
-          Te esperamos no próximo culto.
-        </Text>
-      </View>
+          <Text
+            style={{
+              color: colors.textOnDark,
+              fontSize: cq(3.8),
+              lineHeight: 1.45,
+              textAlign: 'center',
+            }}
+          >
+            {data.address}
+          </Text>
+        </View>
+      )}
     </PdfPage>
   )
 }

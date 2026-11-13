@@ -12,6 +12,7 @@ import { titleSize } from '../../../lib/format'
 import type { CoverData } from '../types'
 import { PdfPage, base, colors, cq, tracking } from './styles'
 import { CHURCH_NAME } from '../../../lib/church'
+import { churchLogoWhite } from './assets'
 
 export function CoverPdf({ data }: { data: CoverData }) {
   return (
@@ -30,6 +31,19 @@ export function CoverPdf({ data }: { data: CoverData }) {
         </Defs>
         <Rect x="0" y="0" width="540" height="960" fill="url(#cover-shade)" />
       </Svg>
+      {!data.image && (
+        <Image
+          src={churchLogoWhite}
+          style={{
+            position: 'absolute',
+            top: cq(40),
+            left: 0,
+            right: 0,
+            height: cq(32),
+            objectFit: 'contain',
+          }}
+        />
+      )}
       <View
         style={{
           position: 'absolute',

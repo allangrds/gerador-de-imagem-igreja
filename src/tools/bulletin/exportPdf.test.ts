@@ -8,6 +8,7 @@ vi.mock('./pdf/assets', () => ({
   gillSans: resolve('src/assets/fonts/GillSans.ttf'),
   gillSansBold: resolve('src/assets/fonts/GillSans-Bold.ttf'),
   churchLogo: resolve('src/assets/logo-iasd-belem-vertical-preto.png'),
+  churchLogoWhite: resolve('src/assets/logo-iasd-belem-vertical-branco.png'),
 }))
 
 function pageOf(type: string, patch = {}) {
@@ -37,7 +38,7 @@ describe('renderBulletinPdf', () => {
         beneficiary: 'Igreja Adventista',
       }),
       pageOf('whatsapp', { link: 'https://chat.whatsapp.com/grupo' }),
-      pageOf('closing', { instagram: 'https://instagram.com/iasdbelem' }),
+      pageOf('closing'),
     ]
 
     const blob = await renderBulletinPdf(pages)
@@ -50,7 +51,10 @@ describe('renderBulletinPdf', () => {
     expect(pdf).toContain('/URI (https://chat.whatsapp.com/grupo)')
     expect(pdf).toContain('/URI (https://photos.app.goo.gl/album)')
     expect(pdf).toContain('/URI (https://iasdbelem.org/cartaz)')
-    expect(pdf).toContain('/URI (https://instagram.com/iasdbelem)')
+    expect(pdf).toContain(
+      '/URI (https://www.instagram.com/adventistas_belemsp/)'
+    )
+    expect(pdf).toContain('/URI (https://www.youtube.com/@iasdbelemsp)')
     // Real text: the Gill Sans subset is embedded instead of drawing the words as shapes.
     expect(pdf).toMatch(/\/FontFile2|\/FontFile3|\/FontFile /)
   })

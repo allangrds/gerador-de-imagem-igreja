@@ -37,3 +37,13 @@
   letter-spacing: 0.12em;
   text-transform: uppercase;
 }
+
+/* Fills the empty top of the page when there is no photo. */
+.logo {
+  position: absolute;
+  top: 40cqw;
+  left: 50%;
+  width: auto;
+  height: 32cqw;
+  transform: translateX(-50%);
+}

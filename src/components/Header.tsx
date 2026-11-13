@@ -1,4 +1,5 @@
 import { Link } from 'react-router'
+import { CHURCH_LOGO_ALT } from '../lib/church'
 import { REPOSITORY_URL } from '../lib/links'
 import styles from './Header.module.css'
 import { Logo } from './Logo'
@@ -8,7 +9,7 @@ export function Header() {
     <header className={styles.header}>
       <div className={styles.inner}>
         <Link to="/" className={styles.brand}>
-          <Logo alt="Igreja Adventista do Sétimo Dia – Belém" />
+          <Logo alt={CHURCH_LOGO_ALT} />
           <span className={styles.name}>
             <span className={styles.title}>Gerador para IASD Belém</span>
             <span className={styles.subtitle}>

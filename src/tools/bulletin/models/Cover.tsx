@@ -1,3 +1,4 @@
+import churchLogo from '../../../assets/logo-iasd-belem-vertical-branco.png'
 import { TextField } from '../../../components/Field'
 import { ImageField } from '../../../components/page-builder/ImageField'
 import { defineModel } from '../../../components/page-builder/types'
@@ -10,13 +11,16 @@ import type { CoverData } from '../types'
 import styles from './Cover.module.css'
 import page from './Page.module.css'
 import { Sheet } from './Sheet'
-import { CHURCH_NAME } from '../../../lib/church'
+import { CHURCH_LOGO_ALT, CHURCH_NAME } from '../../../lib/church'
 
 function Preview({ data }: ModelProps<CoverData>) {
   return (
     <Sheet>
       {data.image && <img className={page.photo} src={data.image.src} alt="" />}
       <div className={styles.shade} />
+      {!data.image && (
+        <img className={styles.logo} src={churchLogo} alt={CHURCH_LOGO_ALT} />
+      )}
       <div className={styles.heading}>
         <span className={page.kicker}>{CHURCH_NAME}</span>
         <h1

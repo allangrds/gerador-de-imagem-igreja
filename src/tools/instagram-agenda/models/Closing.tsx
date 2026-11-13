@@ -1,5 +1,4 @@
 import defaultLogo from '../../../assets/logo-iasd-belem-vertical-preto.png'
-import { TextAreaField, TextField } from '../../../components/Field'
 import { ImageField } from '../../../components/page-builder/ImageField'
 import { defineModel } from '../../../components/page-builder/types'
 import type {
@@ -10,7 +9,7 @@ import type { AgendaClosingData } from '../types'
 import styles from './Closing.module.css'
 import page from './Page.module.css'
 import { Sheet } from './Sheet'
-import { CHURCH_NAME } from '../../../lib/church'
+import { CHURCH_LOGO_ALT } from '../../../lib/church'
 
 function Preview({ data }: ModelProps<AgendaClosingData>) {
   return (
@@ -19,15 +18,8 @@ function Preview({ data }: ModelProps<AgendaClosingData>) {
         <img
           className={styles.logo}
           src={data.logo?.src ?? defaultLogo}
-          alt=""
+          alt={CHURCH_LOGO_ALT}
         />
-        <div className={styles.church}>
-          <span className={styles.name}>{CHURCH_NAME}</span>
-          {data.address && (
-            <span className={styles.address}>{data.address}</span>
-          )}
-        </div>
-        <span className={styles.rule} />
         <div className={styles.actions}>
           <span className={styles.action}>
             <svg
@@ -60,57 +52,30 @@ function Preview({ data }: ModelProps<AgendaClosingData>) {
           </span>
         </div>
       </div>
-      <div className={styles.farewell}>
-        <span className={styles.message}>{data.message}</span>
-        {data.profile && <span className={styles.profile}>{data.profile}</span>}
-      </div>
     </Sheet>
   )
 }
 
 function Form({ data, onChange }: FormProps<AgendaClosingData>) {
   return (
-    <>
-      <ImageField
-        label="Logo da igreja"
-        hint="Sem imagem, usa o logo da igreja."
-        value={data.logo}
-        onChange={(logo) => onChange({ logo })}
-      />
-      <TextField
-        label="Mensagem final"
-        value={data.message}
-        maxLength={24}
-        onChange={(event) => onChange({ message: event.target.value })}
-      />
-      <TextAreaField
-        label="Endereço"
-        rows={2}
-        value={data.address}
-        onChange={(event) => onChange({ address: event.target.value })}
-      />
-      <TextField
-        label="Perfil no Instagram"
-        placeholder="@perfildaigreja"
-        value={data.profile}
-        onChange={(event) => onChange({ profile: event.target.value })}
-      />
-    </>
+    <ImageField
+      label="Logo da igreja"
+      hint="Sem imagem, usa o logo da igreja."
+      value={data.logo}
+      onChange={(logo) => onChange({ logo })}
+    />
   )
 }
 
 export const closing = defineModel<AgendaClosingData>({
   type: 'closing',
   name: 'Final',
-  description: 'Logo, endereço e convite',
+  description: 'Logo e convite para salvar e compartilhar',
   persisted: true,
   defaults: () => ({
     logo: null,
-    message: 'Te esperamos!',
-    address: 'Rua Martim Affonso, 152 · Belenzinho\nSão Paulo – SP',
-    profile: '',
   }),
-  summary: (data) => data.message,
+  summary: (data) => (data.logo ? data.logo.name : 'Logo da igreja'),
   Preview,
   Form,
 })

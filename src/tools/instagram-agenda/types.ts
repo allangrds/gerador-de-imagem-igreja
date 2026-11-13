@@ -14,9 +14,6 @@ export type DatesData = {
 
 export type AgendaClosingData = {
   logo: Photo | null
-  message: string
-  address: string
-  profile: string
 }
 
 export const DATES_LIMIT = 4

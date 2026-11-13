@@ -64,7 +64,6 @@ export type WhatsappData = {
 
 export type ClosingData = {
   logo: Photo | null
-  message: string
   address: string
   instagram: string
   youtube: string
